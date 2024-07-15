@@ -63,10 +63,10 @@
         <div class="container">
 
 
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsFurni"
+            <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsFurni"
                 aria-controls="navbarsFurni" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
-            </button>
+            </button> -->
 
             <div class="collapse navbar-collapse" id="navbarsFurni">
                 <ul class="custom-navbar-nav navbar-nav  mb-2 mb-md-0">
@@ -492,7 +492,8 @@
 
     <!-- Start Footer Section -->
 	</div>
-    <!-- <footer class="footer-section">
+	<div class="container">
+    <footer class="footer-section">
         <div class="container relative">
 
             <div class="sofa-img">
@@ -601,7 +602,8 @@
             </div>
 
         </div>
-    </footer> -->
+    </footer>
+	</div>
     <!-- End Footer Section -->
 
 
