@@ -15,7 +15,9 @@ body {
   line-height: 28px;
   color: #6a6a6a;
   font-size: 14px;
-  background-color: #f1eff2; }
+  background-color: #f1eff2;
+  width: 100vw;
+}
 
 a {
   text-decoration: none;

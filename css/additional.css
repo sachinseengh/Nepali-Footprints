@@ -25,4 +25,30 @@
 .location{
     padding-left: 25%;
     padding-top: 5px;
+
+   
+}
+@media (max-width: 768px) {
+    .location{
+        padding-left:1%;
+        padding-top: 5px;
+    }      
+    .form-control-transparent{
+        margin-top: 2%;
+    }
+    .btn-custom{
+        margin-top:2%;
+       }
+.hero{
+    padding-left: 2%;
+    /* padding-right: 2%; */
+}
+    
+}
+.item1{
+    width:70%;
+}
+.item2{
+    width: 30%;
+    
 }

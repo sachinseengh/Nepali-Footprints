@@ -86,13 +86,14 @@
 
     </nav>
     <!-- End Header/Navigation -->
-
+<div class="all">
     <!-- Start Hero Section -->
     <div class="hero">
         <div class="container">
-            <div class="row justify-content-between">
+			
+            <div class="d-flex  justify-content-between">
                 <div class="col-lg-5">
-                    <div class="intro-excerpt">
+                    <div class="intro-excerpt item1">
                         <h1>Modern Interior <span clsas="d-block">Design Studio</span></h1>
                         <p class="mb-4">Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam
                             vulputate velit imperdiet dolor tempor tristique.</p>
@@ -100,11 +101,9 @@
                                 class="btn btn-white-outline">Explore</a></p>
                     </div>
                 </div>
-                <div class="col-lg-7">
-                    <!-- <div class="hero-img-wrap">
-								<img src="images/couch.png" class="img-fluid">
-							</div> -->
-                </div>
+                <div class="item2 pr-auto">
+					<img src="./images/img-grid-3.jpg" alt="" style="height:100px"class="hero-img-wrap">
+				</div>
             </div>
         </div>
     </div>
@@ -492,7 +491,8 @@
     <!-- End Blog Section -->
 
     <!-- Start Footer Section -->
-    <footer class="footer-section">
+	</div>
+    <!-- <footer class="footer-section">
         <div class="container relative">
 
             <div class="sofa-img">
@@ -601,7 +601,7 @@
             </div>
 
         </div>
-    </footer>
+    </footer> -->
     <!-- End Footer Section -->
 
 
