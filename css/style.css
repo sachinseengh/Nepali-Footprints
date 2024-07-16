@@ -41,7 +41,7 @@ a {
     font-size: 32px;
     font-weight: 600; }
     .custom-navbar .navbar-brand > span {
-      opacity: .4; }
+      opacity: 1; }
   .custom-navbar .navbar-toggler {
     border-color: transparent; }
     .custom-navbar .navbar-toggler:active, .custom-navbar .navbar-toggler:focus {
@@ -55,7 +55,7 @@ a {
   .custom-navbar .custom-navbar-nav li a {
     font-weight: 500;
     color: #ffffff !important;
-    opacity: .5;
+    opacity: 0.8;
     -webkit-transition: .3s all ease;
     -o-transition: .3s all ease;
     transition: .3s all ease;
@@ -112,14 +112,18 @@ a {
       padding: calc(8rem - 30px) 0 8rem 0; } }
   .hero .intro-excerpt {
     position: relative;
-    z-index: 4; }
+    z-index: 4; 
+  width:100%;
+  
+  }
     @media (min-width: 992px) {
       .hero .intro-excerpt {
-        max-width: 450px; } }
+        width: 100%; } }
   .hero h1 {
     font-weight: 700;
     color: #ffffff;
-    margin-bottom: 30px; }
+    /* margin-bottom: 30px; */
+   }
     @media (min-width: 1400px) {
       .hero h1 {
         font-size: 54px; } }
@@ -204,16 +208,16 @@ a {
   color: #2f2f2f; }
 
 .product-section {
-  padding: 7rem 0; }
+  padding: 0.8rem 0; }
   .product-section .product-item {
     text-align: center;
     text-decoration: none;
     display: block;
     position: relative;
-    padding-bottom: 50px;
+    /* padding-bottom: 50px; */
     cursor: pointer; }
     .product-section .product-item .product-thumbnail {
-      margin-bottom: 30px;
+      margin-bottom: 15px;
       position: relative;
       top: 0;
       -webkit-transition: .3s all ease;
@@ -276,10 +280,11 @@ a {
       height: 70%; }
 
 .why-choose-section {
-  padding: 7rem 0; }
+  padding: 0rem 0; }
   .why-choose-section .img-wrap {
     position: relative; }
     .why-choose-section .img-wrap:before {
+      margin-top: 15%;
       position: absolute;
       content: "";
       width: 255px;
@@ -326,6 +331,7 @@ a {
     grid-template-columns: repeat(27, 1fr);
     position: relative; }
     .we-help-section .imgs-grid:before {
+      margin-top: 10%;
       position: absolute;
       content: "";
       width: 255px;
@@ -511,7 +517,7 @@ a {
         background-color: #3b5d50; }
 
 .before-footer-section {
-  padding: 7rem 0 12rem 0 !important; }
+  padding: 3rem 0 12rem 0 !important; }
 
 .blog-section {
   padding: 7rem 0 12rem 0; }
@@ -627,7 +633,7 @@ a {
       font-size: 14px !important; }
 
 .untree_co-section {
-  padding: 7rem 0; }
+  padding: 3rem 0; }
 
 .form-control {
   height: 50px;

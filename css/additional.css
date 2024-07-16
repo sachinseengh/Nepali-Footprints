@@ -39,17 +39,18 @@
     .btn-custom{
         margin-top:2%;
        }
-.hero{
+    
+}
+.hero,.product-section,.why-choose-section,.we-help-section,.footer-section{
     padding-left: 2%;
     /* padding-right: 2%; */
-}
-    
 }
 .item1{
     width:70%;
 }
 .item2{
     width: 30%;
+    align-content: center;
     
 }
 
@@ -57,3 +58,39 @@
     padding-left: 2%;
     padding-right: 0%;
 }
+.hero-img-wrap{
+    min-width: 90px;
+    max-width: 250px;
+    min-height: 90px;
+    max-height: 250px;
+    margin-left: 10%;
+    
+}
+
+
+
+
+
+/* Ensure the dropdown menu is hidden by default */
+.nav-item .dropdown-menu {
+    display: none;
+    background-color:#36584b; /* Semi-transparent green color */
+    backdrop-filter: blur(20px);
+    border: none;
+     /* Optional: removes the border */
+  }
+  
+  /* Show the dropdown menu on hover */
+  .nav-item:hover .dropdown-menu {
+    display: block;
+  }
+  
+  /* Change the text color of the dropdown items */
+  .nav-item .dropdown-menu .dropdown-item {
+   /* Change this to your desired text color */
+  }
+  
+  /* Change the background color when hovering over a dropdown item */
+  .nav-item .dropdown-menu .dropdown-item:hover {
+    background-color: rgba(0, 0, 0, 0.1); /* Change this to your desired hover background color */
+  }
