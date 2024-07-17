@@ -1,3 +1,10 @@
+<?php
+
+@session_start();
+
+?>
+
+
 <!doctype html>
 <html lang="en">
 
@@ -11,12 +18,12 @@
     <meta name="keywords" content="bootstrap, bootstrap4" />
 
     <!-- Bootstrap CSS -->
-    <link href="./css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-    <link href="./css/tiny-slider.css" rel="stylesheet">
-    <link href="./css/style.css" rel="stylesheet">
-    <link href="./css/additional.css" rel="stylesheet">
+    <link href="../css/tiny-slider.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
+    <link href="../css/additional.css" rel="stylesheet">
     <title>Nepali Footprints </title>
 </head>
 
@@ -49,31 +56,33 @@
                 </ul>
 
                 <ul class="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-1">
-                <?php if(isset($_SESSION['user'])): ?>
+
+                    <?php if(isset($_SESSION['user'])): ?>
                     <div class="author-pic text-center">
                         <img src="../images/person-1.png" alt="Maria Jones" class="img-fluid"
                             style="border-radius:200px; height:2rem">
                     </div>
                     <?php else: ?>
-                    <li><a class="nav-link" href="./users/login.php"><img src="./images/user.svg"></a></li>
+                    <li><a class="nav-link" href="./login.php"><img src="../images/user.svg"></a></li>
                     <?php endif; ?>
-                    <li><a class="nav-link" href="cart.php"><img src="./images/cart.svg"></a></li>
+                    <li><a class="nav-link" href="../cart.php"><img src="../images/cart.svg"></a></li>
                 </ul>
             </div>
         </div>
 
     </nav>
     <!-- second navbar -->
-	 <!-- reloacate using location -->
-    <nav class="custom-navbar location  navbar navbar navbar-expand-md navbar-dark bg-dark" arial-label="Furni navigation bar">
+    <!-- reloacate using location -->
+    <nav class="custom-navbar location  navbar navbar navbar-expand-md navbar-dark bg-dark"
+        arial-label="Furni navigation bar">
 
         <div class="container">
             <div class="collapse navbar-collapse" id="navbarsFurni">
                 <ul class="custom-navbar-nav navbar-nav  mb-2 mb-md-0">
                     <li class="nav-item ">
-                        <a class="nav-link" href="index.php">Home</a>
+                        <a class="nav-link" href="../index.php">Home</a>
                     </li>
-                    <li><a class="nav-link" href="shop.php">New Arrival</a></li>
+                    <li><a class="nav-link" href="../shop.php">New Arrival</a></li>
 
                     <li class="nav-item dropdown ">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
@@ -81,26 +90,26 @@
                             MENS
                         </a>
                         <ul class="dropdown-menu   drop-down" aria-labelledby="navbarDropdownMenuLink">
-                            <li ><a class="dropdown-item" href="shop.php">Sports</a></li>
-                            <li><a class="dropdown-item" href="shop.php">Casuals</a></li>
-                            <li><a class="dropdown-item" href="shop.php">Boot</a></li>
-                            <li><a class="dropdown-item" href="shop.php">Formal</a></li>
+                            <li><a class="dropdown-item" href="../shop.php">Sports</a></li>
+                            <li><a class="dropdown-item" href="../shop.php">Casuals</a></li>
+                            <li><a class="dropdown-item" href="../shop.php">Boot</a></li>
+                            <li><a class="dropdown-item" href="../shop.php">Formal</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown ">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
-                           WOMENS
+                            WOMENS
                         </a>
                         <ul class="dropdown-menu drop-down" aria-labelledby="navbarDropdownMenuLink">
-                            <li ><a class="dropdown-item" href="shop.php">Sports</a></li>
-                            <li><a class="dropdown-item" href="shop.php">Casuals</a></li>
-                            <li><a class="dropdown-item" href="shop.php">Boot</a></li>
-                            <li><a class="dropdown-item" href="shop.php">Formal</a></li>
+                            <li><a class="dropdown-item" href="../shop.php">Sports</a></li>
+                            <li><a class="dropdown-item" href="../shop.php">Casuals</a></li>
+                            <li><a class="dropdown-item" href="../shop.php">Boot</a></li>
+                            <li><a class="dropdown-item" href="../shop.php">Formal</a></li>
                         </ul>
                     </li>
-                    
-                    <li><a class="nav-link" href="contact.php">Contact us</a></li>
+
+                    <li><a class="nav-link" href="../contact.php">Contact us</a></li>
                 </ul>
 
 

@@ -94,3 +94,20 @@
   .nav-item .dropdown-menu .dropdown-item:hover {
     background-color: rgba(0, 0, 0, 0.1); /* Change this to your desired hover background color */
   }
+
+
+  /* cart */
+  .cart-margin {
+    padding: 0rem 0 12rem 0 !important; }
+
+
+    .card-body{
+        border-radius:10px;
+        background-color: #ebe9e9;
+     
+        box-shadow: rgb(55, 55, 55) 0px 2px 5px;
+    }
+
+    .title{
+        color:rgb(54 88 75);
+    }
