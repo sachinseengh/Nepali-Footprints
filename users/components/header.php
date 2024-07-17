@@ -24,6 +24,7 @@
     <link href="../css/tiny-slider.css" rel="stylesheet">
     <link href="../css/style.css" rel="stylesheet">
     <link href="../css/additional.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/product_detail.css">
     <title>Nepali Footprints </title>
 </head>
 
@@ -36,7 +37,7 @@
         arial-label="Furni navigation bar">
 
         <div class="container my-1">
-            <a class="navbar-brand" href="index.html">Nepali FootPrints<span>.</span></a>
+            <a class="navbar-brand" href="index.php">Nepali FootPrints<span>.</span></a>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsFurni"
                 aria-controls="navbarsFurni" aria-expanded="false" aria-label="Toggle navigation">
