@@ -1,0 +1,16 @@
+td{
+   max-width:10rem;
+   min-width: 8rem;
+    overflow: hidden;
+}
+
+.td-1{
+    max-width: 1rem;
+    min-width: 1rem;
+    overflow: hidden;
+}
+.td-last{
+    max-width: 1rem;
+    min-width: 1rem;
+    overflow: hidden;
+}

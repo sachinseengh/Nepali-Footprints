@@ -1,0 +1,129 @@
+.product-details {
+    font-family: Inter, sans-serif;
+}
+
+.img-card {
+    width: 100%; /* Adjusted to use Bootstrap's grid */
+}
+
+.img-card img {
+    width: 85%;
+    border-radius: 4px;
+    height: 400px;
+    object-fit: contain;
+}
+
+.small-Card {
+    width:85%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    margin-top: 15px;
+    gap: 12px;
+}
+
+.featured-Img {
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 0px 5px, rgba(0, 0, 0, 0.23) 0px 0px 0px;
+}
+
+.small-Card img {
+    width: 104px;
+    height: 104px;
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+
+.small-Card img:active {
+    border: 1px solid #17696a;
+}
+
+.product-info h3 {
+    font-size: 32px;
+    font-family: Inter, sans-serif;
+    font-weight: 600;
+    line-height: 130%;
+}
+
+.product-info h5 {
+    font-size: 24px;
+    /* font-family: Lato; */
+    font-weight: 500;
+    line-height: 130%;
+    color: #ff4242;
+    margin: 6px 0;
+}
+
+.product-info del {
+    color: #a9a9a9;
+}
+
+.product-info p {
+    color: #424551;
+    margin: 15px 0;
+}
+
+.sizes p {
+    font-size: 22px;
+    color: black;
+}
+
+.size-option {
+    width: 200px;
+    height: 30px;
+    margin-bottom: 15px;
+    padding: 5px;
+}
+
+.quantity input {
+    width: 51px;
+    height: 33px;
+    margin-bottom: 15px;
+    padding: 6px;
+}
+
+button {
+    background: #17696a;
+    border-radius: 4px;
+    padding: 10px 37px;
+    border: none;
+    color: white;
+    font-weight: 600;
+}
+
+button:hover {
+    background: #ff4242;
+    transition: ease-in 0.4s;
+}
+
+.delivery {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #787a80;
+    font-size: 12px;
+    line-height: 150%;
+    letter-spacing: 1px;
+}
+
+hr {
+    color: #787a80;
+    width: 100%;
+    opacity: 0.67;
+}
+
+.pagination {
+    color: #787a80;
+    margin: 15px 0;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 576px) {
+    .product-container {
+        flex-direction: column;
+    }
+
+    .small-Card img {
+        width: 80px;
+    }
+}
