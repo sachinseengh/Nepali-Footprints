@@ -1,12 +1,14 @@
 <?php
-include ('components/header.php');
+
+include('components/header.php');
+
 ?>
-           
+
             <div class="main-content container-fluid">
     <div class="page-title">
         <div class="row">
             <div class="col-12 col-md-6 order-md-1 order-last">
-                <h3>Customers</h3>
+                <h3>Manage Products</h3>
                 <p class="text-subtitle text-muted">We use 'simple-datatables' made by @fiduswriter. You can check the full documentation <a href="https://github.com/fiduswriter/Simple-DataTables/wiki">here</a>.</p>
             </div>
             <div class="col-12 col-md-6 order-md-2 order-first">
@@ -30,22 +32,22 @@ include ('components/header.php');
                         <tr>
                             <th>Id</th>
                             <th>Name</th>
-                            <th>Phone</th>
-                            <th>Email</th>
-                            <th>Address</th>
-                            <th>Delete</th>
+                            <th>Price</th>
+                            <th>Featured Image</th>
+                            <th>Edit/Delete</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td >1</td>
+                            <td>Graiden</td>
                             <td>vehicula.aliquet@semconsequat.co.uk</td>
                             <td>076 4820 8838</td>
                             <td>Offenburg</td>
-                            <td>address</td>
-                            <td class="td-last">
-                            <a class="text-dark my-1 mx-1"><i class='fas fa-trash-alt' style='font-size:1.5rem;color:red'></i></a>
-                            </div>
+                            <td>
+                            <div class="container">
+                                            <a class="text-dark my-1 mx-1 "><i class='fas fa-pencil-alt' style='font-size:1.5rem'></i></a>
+                                            <a class="text-dark my-1 mx-1"><i class='fas fa-trash-alt' style='font-size:1.5rem;color:red'></i></a>
+                                            </div>
                             </td>
                         </tr>
                         <tr>
@@ -280,8 +282,8 @@ include ('components/header.php');
 
     </section>
 </div>
-<?php
-include ('components/footer.php');
 
+       <?php
 
-?>
+       include ('components/footer.php');
+       ?>

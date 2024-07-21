@@ -115,6 +115,8 @@
     <script src="js/tiny-slider.js"></script>
     <script src="js/custom.js"></script>
     <script src ="customjs/script.js"></script>
+
+    <script src="js/cart.js"></script>
 </body>
 
 </html>

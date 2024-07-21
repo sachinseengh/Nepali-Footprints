@@ -27,14 +27,20 @@
                             <label for="inputAddress" class="form-label">Name</label>
                             <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St" name="name">
                         </div>
-                        <div class="col-12">
-                            <label for="inputAddress2" class="form-label">Address</label>
-                            <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor" name="address">
+                        <div class="col-md-6">
+                            <label for="inputCity" class="form-label">Phone</label>
+                            <input type="tel" class="form-control" id="inputCity" name="city">
+                            
                         </div>
                         <div class="col-md-6">
                             <label for="inputCity" class="form-label">City</label>
                             <input type="text" class="form-control" id="inputCity" name="city">
                         </div>
+                        <div class="col-12">
+                            <label for="inputAddress2" class="form-label">Address</label>
+                            <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor" name="address">
+                        </div>
+                       
                         <div class="col-12">
                             <button type="submit" class="btn btn-primary">Register</button>
                             <a href="login.php" class="btn btn-secondary">Login</a>

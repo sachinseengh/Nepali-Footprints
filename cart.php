@@ -35,21 +35,21 @@ include 'components/header.php';
                           <td class="product-name">
                             <h2 class="h5 text-black">Product 1</h2>
                           </td>
-                          <td>$49.00</td>
+                          <td class="price">$49</td>
                           <td>
                             <div class="input-group mb-3 d-flex align-items-center quantity-container" style="max-width: 120px;">
                               <div class="input-group-prepend">
-                                <button class="btn btn-outline-black decrease" type="button">&minus;</button>
+                              <a href="hel.php?id=1"> <button class="btn btn-outline-black decrease" type="button" onclick="decreaseTotal()">&minus;</button></a>
                               </div>
                               <input type="text" class="form-control text-center quantity-amount" value="1" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1">
                               <div class="input-group-append">
-                                <button class="btn btn-outline-black increase" type="button">&plus;</button>
+                                <button class="btn btn-outline-black increase" type="button" onclick="increaseTotal()">&plus;</button>
                               </div>
                             </div>
         
                           </td>
-                          <td>$49.00</td>
-                          <td><a href="#" class="btn btn-black btn-sm">X</a></td>
+                          <td class="total-amount">$49</td>
+                          <td><a href="" class="btn btn-black btn-sm" onclick="deleteRow()">X</a></td>
                         </tr>
         
                         <tr>
@@ -84,9 +84,9 @@ include 'components/header.php';
               <div class="row">
                 <div class="col-md-6">
                   <div class="row mb-5">
-                    <div class="col-md-6 mb-3 mb-md-0">
+                    <!-- <div class="col-md-6 mb-3 mb-md-0">
                       <button class="btn btn-black btn-sm btn-block">Update Cart</button>
-                    </div>
+                    </div> -->
                     <div class="col-md-6">
                       <button class="btn btn-outline-black btn-sm btn-block">Continue Shopping</button>
                     </div>
