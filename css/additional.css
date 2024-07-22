@@ -111,3 +111,17 @@
     .title{
         color:rgb(54 88 75);
     }
+
+   .row{
+    justify-content: space-around;
+   }
+
+   .row>*{
+    padding: 0;
+   }
+
+   .product{
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    padding: .4rem;
+    margin: 0 .25rem 0 .25rem;
+   }
