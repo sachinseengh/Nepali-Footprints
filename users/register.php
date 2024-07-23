@@ -52,8 +52,6 @@
     </div>
 </div>
 <br>
-<br>
-<br>
-<br>
+
 
 <?php include('components/footer.php'); ?>

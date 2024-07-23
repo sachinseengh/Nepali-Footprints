@@ -26,44 +26,42 @@
 
     <!-- Start Header/Navigation -->
     <!-- //color of first  nav bar using cchange -->
-    <nav class="custom-navbar cchange navbar navbar navbar-expand-md navbar-dark bg-dark"
-        arial-label="Furni navigation bar">
+    <nav class="custom-navbar cchange navbar navbar-expand-md navbar-dark bg-dark" aria-label="Furni navigation bar">
+    <div class="container my-1">
+        <a class="navbar-brand d-flex align-items-center" href="index.php">
+            Nepali FootPrints<span>.</span>
+         
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsFurni"
+            aria-controls="navbarsFurni" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-        <div class="container my-1">
-            <a class="navbar-brand" href="index.php">Nepali FootPrints<span>.</span></a>
+        <div class="collapse navbar-collapse" id="navbarsFurni">
+            <ul class="custom-navbar-nav navbar-nav ms-auto mx-2 mb-2 mb-md-0">
+                <form class="d-flex">
+                    <input class="form-control me-2 form-control-transparent" type="search" placeholder="Search"
+                        aria-label="Search">
+                    <button type="submit" class="btn btn-custom">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                </form>
+            </ul>
 
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsFurni"
-                aria-controls="navbarsFurni" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-
-            <div class="collapse navbar-collapse" id="navbarsFurni">
-                <ul class="custom-navbar-nav navbar-nav ms-auto mx-2 mb-2 mb-md-0">
-                    <form class="d-flex">
-                        <input class="form-control me-2 form-control-transparent" type="search" placeholder="Search"
-                            aria-label="Search">
-                        <!-- <button class="btn btn-custom" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button> -->
-                        <button type="submit" class="btn btn-custom"><i
-                                class="fa-solid fa-magnifying-glass"></i></button>
-                    </form>
-                </ul>
-
-                <ul class="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-1">
+            <ul class="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-1">
                 <?php if(isset($_SESSION['user'])): ?>
-                    <div class="author-pic text-center">
-                        <img src="../images/person-1.png" alt="Maria Jones" class="img-fluid"
-                            style="border-radius:200px; height:2rem">
-                    </div>
-                    <?php else: ?>
-                    <li><a class="nav-link" href="./users/login.php"><img src="./images/user.svg"></a></li>
-                    <?php endif; ?>
-                    <li><a class="nav-link" href="cart.php"><img src="./images/cart.svg"></a></li>
-                </ul>
-            </div>
+                <div class="author-pic text-center">
+                    <img src="../images/person-1.png" alt="Maria Jones" class="img-fluid" style="border-radius:200px; height:2rem">
+                </div>
+                <?php else: ?>
+                <li><a class="nav-link" href="./users/login.php"><img src="./images/user.svg" alt="Login"></a></li>
+                <?php endif; ?>
+                <li><a class="nav-link" href="cart.php"><img src="./images/cart.svg" alt="Cart"></a></li>
+            </ul>
         </div>
+    </div>
+</nav>
 
-    </nav>
     <!-- second navbar -->
 	 <!-- reloacate using location -->
     <nav class="custom-navbar location  navbar navbar navbar-expand-md navbar-dark bg-dark" arial-label="Furni navigation bar">

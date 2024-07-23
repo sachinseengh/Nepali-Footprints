@@ -68,7 +68,8 @@ include 'components/header.php';
                 </a>
             </div>
             </div>
-			<div class="col-6 col-md-3  col-sm-6 mb-5 "><div class="product">
+            <div class="col-6 col-md-3 col-sm-6 mb-5">
+				<div class="product">
 				
                 <a class="product-item" href="#">
                     <img src="images/shoe.jpg" class="img-fluid product-thumbnail">
@@ -81,7 +82,8 @@ include 'components/header.php';
                 </a>
             </div>
             </div>
-			<div class="col-6 col-md-3 col-sm-6 mb-5"><div class="product">
+            <div class="col-6 col-md-3 col-sm-6 mb-5">
+				<div class="product">
 				
                 <a class="product-item" href="#">
                     <img src="images/shoe.jpg" class="img-fluid product-thumbnail">
@@ -94,7 +96,8 @@ include 'components/header.php';
                 </a>
             </div>
             </div>
-			<div class="col-6 col-md-3 col-sm-6 mb-5 "><div class="product">
+            <div class="col-6 col-md-3 col-sm-6 mb-5">
+				<div class="product">
 				
                 <a class="product-item" href="#">
                     <img src="images/shoe.jpg" class="img-fluid product-thumbnail">
@@ -107,7 +110,8 @@ include 'components/header.php';
                 </a>
             </div>
             </div>
-			<div class="col-6 col-md-3  col-sm-6 mb-5 "><div class="product">
+            <div class="col-6 col-md-3 col-sm-6 mb-5">
+				<div class="product">
 				
                 <a class="product-item" href="#">
                     <img src="images/shoe.jpg" class="img-fluid product-thumbnail">
@@ -120,7 +124,8 @@ include 'components/header.php';
                 </a>
             </div>
             </div>
-			<div class="col-6 col-md-3  col-sm-6 mb-5 "><div class="product">
+            <div class="col-6 col-md-3 col-sm-6 mb-5">
+				<div class="product">
 				
                 <a class="product-item" href="#">
                     <img src="images/shoe.jpg" class="img-fluid product-thumbnail">
@@ -133,7 +138,8 @@ include 'components/header.php';
                 </a>
             </div>
             </div>
-			<div class="col-6 col-md-4  col-sm-6 mb-5  "><div class="product">
+            <div class="col-6 col-md-3 col-sm-6 mb-5">
+				<div class="product">
 				
                 <a class="product-item" href="#">
                     <img src="images/shoe.jpg" class="img-fluid product-thumbnail">
@@ -145,6 +151,95 @@ include 'components/header.php';
                     </span>
                 </a>
             </div>
+            </div>
+            <div class="col-6 col-md-3 col-sm-6 mb-5">
+				<div class="product">
+				
+                <a class="product-item" href="#">
+                    <img src="images/shoe.jpg" class="img-fluid product-thumbnail">
+                    <h3 class="product-title">Nordic Chair</h3>
+                    <strong class="product-price">$50.00</strong>
+
+                    <span class="icon-cross">
+                        <img src="images/cross.svg" class="img-fluid">
+                    </span>
+                </a>
+            </div>
+            </div>
+            <div class="col-6 col-md-3 col-sm-6 mb-5">
+				<div class="product">
+				
+                <a class="product-item" href="#">
+                    <img src="images/shoe.jpg" class="img-fluid product-thumbnail">
+                    <h3 class="product-title">Nordic Chair</h3>
+                    <strong class="product-price">$50.00</strong>
+
+                    <span class="icon-cross">
+                        <img src="images/cross.svg" class="img-fluid">
+                    </span>
+                </a>
+            </div>
+            </div>
+            <div class="col-6 col-md-3 col-sm-6 mb-5">
+				<div class="product">
+				
+                <a class="product-item" href="#">
+                    <img src="images/shoe.jpg" class="img-fluid product-thumbnail">
+                    <h3 class="product-title">Nordic Chair</h3>
+                    <strong class="product-price">$50.00</strong>
+
+                    <span class="icon-cross">
+                        <img src="images/cross.svg" class="img-fluid">
+                    </span>
+                </a>
+            </div>
+            </div>
+            <div class="col-6 col-md-3 col-sm-6 mb-5">
+				<div class="product">
+				
+                <a class="product-item" href="#">
+                    <img src="images/shoe.jpg" class="img-fluid product-thumbnail">
+                    <h3 class="product-title">Nordic Chair</h3>
+                    <strong class="product-price">$50.00</strong>
+
+                    <span class="icon-cross">
+                        <img src="images/cross.svg" class="img-fluid">
+                    </span>
+                </a>
+            </div>
+            </div>
+            <div class="col-6 col-md-3 col-sm-6 mb-5">
+				<div class="product">
+				
+                <a class="product-item" href="#">
+                    <img src="images/shoe.jpg" class="img-fluid product-thumbnail">
+                    <h3 class="product-title">Nordic Chair</h3>
+                    <strong class="product-price">$50.00</strong>
+
+                    <span class="icon-cross">
+                        <img src="images/cross.svg" class="img-fluid">
+                    </span>
+                </a>
+            </div>
+            </div>
+            <div class="col-6 col-md-3 col-sm-6 mb-5">
+				<div class="product">
+				
+                <a class="product-item" href="#">
+                    <img src="images/shoe.jpg" class="img-fluid product-thumbnail">
+                    <h3 class="product-title">Nordic Chair</h3>
+                    <strong class="product-price">$50.00</strong>
+
+                    <span class="icon-cross">
+                        <img src="images/cross.svg" class="img-fluid">
+                    </span>
+                </a>
+            </div>
+            </div>
+		
+            
+            </div>
+			
             </div>
 			
            

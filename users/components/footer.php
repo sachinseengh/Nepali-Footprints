@@ -2,14 +2,12 @@
     <footer class="footer-section pb-0 ">
         <div class="container relative">
 
-            <div class="sofa-img">
-                <img src="../images/sofa.png" alt="Image" class="img-fluid px-3">
-            </div>
 
-            <div class="row">
+
+            <!-- <div class="row">
                 <div class="col-lg-8">
                     <div class="subscription-form">
-                        <h3 class="d-flex align-items-center"><span class="me-1"><img src="../images/envelope-outline.svg"
+                        <h3 class="d-flex align-items-center"><span class="me-1"><img src="images/envelope-outline.svg"
                                     alt="Image" class="img-fluid"></span><span>Subscribe to Newsletter</span></h3>
 
                         <form action="#" class="row g-3">
@@ -28,9 +26,9 @@
 
                     </div>
                 </div>
-            </div>
+            </div> -->
 
-            <div class="row g-5 mb-5">
+            <div class="row g-5 mb-5 px-3">
                 <div class="col-lg-4">
                     <div class="mb-4 footer-logo-wrap"><a href="#" class="footer-logo">Nepali Footprints<span>.</span></a></div>
                     <p class="mb-4">Donec facilisis quam ut purus rutrum lobortis. Donec vitae odio quis nisl dapibus
@@ -45,8 +43,8 @@
                     </ul>
                 </div>
 
-                <div class="col-lg-8">
-                    <div class="row links-wrap">
+                <div class="col-lg-8 ">
+                    <div class="row links-wrap mx-2">
                         <div class="col-6 col-sm-6 col-md-3">
                             <ul class="list-unstyled">
                                 <li><a href="#">About us</a></li>
@@ -115,6 +113,8 @@
     <script src="js/tiny-slider.js"></script>
     <script src="js/custom.js"></script>
     <script src ="customjs/script.js"></script>
+
+    <script src="js/cart.js"></script>
 </body>
 
 </html>

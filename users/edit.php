@@ -1,5 +1,5 @@
 <?php include('components/header.php'); ?>
-<div class="container my-3 mb-5 px-4" >
+<div class="container my-3  px-4" >
     <h1 class="text-center title" style="font-family:'Inter, sans-serif">Update Details</h1>
     <div class="row justify-content-center">
         <div class="card px-0" style="width: 100%; max-width: 40rem;"> <!-- Adjusted max-width here -->

@@ -8,9 +8,9 @@
 </div>
 <?php endif; ?>
 
-<div class="container my-1 py-3">
+<div class="container my-1  py-3">
     <h1 class="text-center title" style="font-family:'Inter, sans-serif">Your Account</h1>
-    <div class="row justify-content-center">
+    <div class="row justify-content-center mb-4">
         <div class="col-md-8 col-lg-6">
             <div class="card">
                 <div class="card-body">
