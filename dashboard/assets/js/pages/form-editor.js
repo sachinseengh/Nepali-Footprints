@@ -30,3 +30,8 @@ new Quill("#full", {
         }, 
         theme: "snow" 
     })
+
+
+    snow.on('text-change', function() {
+        document.querySelector('#editor-content').value = snow.root.innerHTML;
+    });

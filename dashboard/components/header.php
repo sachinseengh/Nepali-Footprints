@@ -17,6 +17,32 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <link rel="stylesheet" href="assets/css/custom.css">
     <link rel="stylesheet" href="assets/vendors/simple-datatables/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <style>
+        .swal2-popup {
+      font-size: 0.8rem; /* Adjust font size */
+      width: 30%; /* Adjust width */
+      max-width: 90%;
+      max-height:80%; /* Ensure the width is responsive */
+    }
+
+    .swal2-title {
+      font-size: 1.2rem; /* Adjust title font size */
+    }
+
+    .swal2-html-container {
+      font-size: 0.9rem; /* Adjust text font size */
+    }
+
+    .swal2-confirm {
+      padding: 0.5rem 1rem; /* Adjust button padding */
+    }
+
+    .swal2-cancel {
+      padding: 0.5rem 1rem; /* Adjust button padding */
+    }
+    </style>
 </head>
 
 <body>
