@@ -22,7 +22,7 @@
     <style>
         .swal2-popup {
       font-size: 0.8rem; /* Adjust font size */
-      width: 30%; /* Adjust width */
+      width: 50%; /* Adjust width */
       max-width: 90%;
       max-height:80%; /* Ensure the width is responsive */
     }
@@ -42,6 +42,8 @@
     .swal2-cancel {
       padding: 0.5rem 1rem; /* Adjust button padding */
     }
+
+    
     </style>
 </head>
 

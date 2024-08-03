@@ -1,6 +1,7 @@
 <?php
 include('components/header.php');
 
+
 ?>
 
 <div class="main-content container-fluid pt-1">
@@ -11,7 +12,7 @@ include('components/header.php');
                 <?php if (isset($_GET['msg'])) { ?>
                 <script>
                 Swal.fire({
-                    position: 'top-end',
+                    position: 'center',
                     icon: 'success',
                     title: '<?php echo $_GET['msg']; ?>',
                     showConfirmButton: false,
@@ -91,14 +92,14 @@ include('components/header.php');
             <div class="card-header pb-0">
                 <h4 class="card-title ">Enter Product Details</h4>
             </div>
-            <form action="./Controller/addProduct.php" method="post">
+            <form action="./Controller/addProduct.php" method="post" enctype="multipart/form-data">
                 <div class="card-body">
                     <div class="row">
                         <!-- Name of product -->
                         <div class="col-md-12 my-1">
                             <div class="form-group">
                                 <label for="basicInput">Name of Product</label>
-                                <input type="text" class="form-control" id="basicInput" name="name">
+                                <input type="text" class="form-control" id="basicInput" name="name" >
                             </div>
                         </div>
 
@@ -106,7 +107,7 @@ include('components/header.php');
                         <div class="col-md-12 my-1">
                             <div class="form-group">
                                 <label for="price">Price</label>
-                                <input type="text" class="form-control" id="price" name="price">
+                                <input type="text" class="form-control" id="price" name="price" >
                             </div>
                         </div>
                         <!-- Description -->
@@ -153,10 +154,10 @@ include('components/header.php');
                             <div class="card-body p-0 pt-2">
                                 <div class="row">
                                     <div class=" mb-4">
-                                        <h6>Category</h6>
+                                        <h6>Sub Category</h6>
                                         <fieldset class="form-group">
                                             <select class="form-select" id="basicSelect" name="sub_category">
-                                                <option selected>Select Category</option>
+                                                
                                                 <option>Sports</option>
                                                 <option>Casuals</option>
                                                 <option>Boot</option>
@@ -170,63 +171,64 @@ include('components/header.php');
                         </div>
                     </div>
                     <h6 class="mb-0">Images</h6>
-                    <div>
-                        <div class="d-flex row ">
-                            <div class="col-12">
-                                <div>
-                                    <label class="col-form-label p-1">Featured Image :</label>
-                                </div>
-                                <div>
-                                    <div class="form-file">
-                                        <input type="file" class="form-file-input" id="customFile">
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-12 ">
-                            <div class="form-group  align-items-center">
-                                <div class="col-lg-3 col-3">
-                                    <label class="col-form-label">Additional Image 1:</label>
-                                </div>
-                                <div class="col-lg-9 col-9">
-                                    <div class="form-file">
-                                        <input type="file" class="form-file-input" id="customFile">
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-12 ">
-                            <div class="form-group align-items-center">
-                                <div class="col-lg-3 col-3">
-                                    <label class="col-form-label">Additional Image 2:</label>
-                                </div>
-                                <div class="col-lg-9 col-9">
-                                    <div class="form-file">
-                                        <input type="file" class="form-file-input" id="customFile">
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-12">
-                            <div class="form-group col align-items-center">
-                                <div class="col-lg-3 col-3">
-                                    <label class="col-form-label">Additional Image 3:</label>
-                                </div>
-                                <div class="col-lg-9 col-9">
-                                    <div class="form-file">
-                                        <input type="file" class="form-file-input" id="customFile">
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+            <div>
+              <div class="d-flex row ">
+                <div class="col-12">
+                  <div>
+                    <label class="col-form-label p-1">Featured Image:</label>
+                  </div>
+                  <div>
+                    <div class="form-file">
+                      <input type="file" class="form-file-input" id="fileInput1" name="featured_img" accept="image/*">
+                      <img id="preview1" class="preview" src="" alt="Featured Image Preview" height="70" width="70" style="padding-top:0.5rem">
                     </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-12">
+                <div class="form-group align-items-center">
+                  <div class="col-lg-3 col-3">
+                    <label class="col-form-label">Additional Image 1:</label>
+                  </div>
+                  <div class="col-lg-9 col-9">
+                    <div class="form-file">
+                      <input type="file" class="form-file-input" id="fileInput2" name="add_img1" accept="image/*">
+                      <img id="preview2" class="preview" src="" alt="Additional Image 1 Preview" height="70" width="70" style="padding-top:0.5rem">
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-12">
+                <div class="form-group align-items-center">
+                  <div class="col-lg-3 col-3">
+                    <label class="col-form-label">Additional Image 2:</label>
+                  </div>
+                  <div class="col-lg-9 col-9">
+                    <div class="form-file">
+                      <input type="file" class="form-file-input" id="fileInput3" name="add_img2" accept="image/*">
+                      <img id="preview3" class="preview" src="" alt="Additional Image 2 Preview" height="70" width="70" style="padding-top:0.5rem">
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-12">
+                <div class="form-group align-items-center">
+                  <div class="col-lg-3 col-3">
+                    <label class="col-form-label">Additional Image 3:</label>
+                  </div>
+                  <div class="col-lg-9 col-9">
+                    <div class="form-file">
+                      <input type="file" class="form-file-input" id="fileInput4" name="add_img3" accept="image/*">
+                      <img id="preview4" class="preview" src="" alt="Additional Image 3 Preview" height="70" width="70" style="padding-top:0.5rem">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
 
                     <h6 class="my-3">Size and Quantity</h6>
                     <div class="d-flex row ">
@@ -236,7 +238,7 @@ include('components/header.php');
                                     style="font-family:times new roman;font-size:1.5rem">30</label>
                             </div>
                             <div class="mx-2 my-2">
-                                <input type="number" id="last-name" class="form-control" name="fname" name="s_30">
+                                <input type="number" id="last-name" class="form-control" name="s_30">
                             </div>
                         </div>
                         <div class="col-6 col-md-3 col-sm-4 d-flex  ">
@@ -392,7 +394,29 @@ include('components/header.php');
 
 
 </div>
+<script>
+    document.querySelectorAll('.form-file-input').forEach((input) => {
+      input.addEventListener('change', function(event) {
+        const fileInput = event.target;
+        const previewId = fileInput.id.replace('fileInput', 'preview');
+        const preview = document.getElementById(previewId);
 
+        if (fileInput.files && fileInput.files[0]) {
+          const reader = new FileReader();
+
+          reader.onload = function(e) {
+            preview.src = e.target.result;
+            preview.style.display = 'block'; // Show the image preview
+          }
+
+          reader.readAsDataURL(fileInput.files[0]);
+        } else {
+          preview.src = '';
+          preview.style.display = 'none'; // Hide the image preview if no file is selected
+        }
+      });
+    });
+  </script>
 <?php
 include('components/footer.php');
 ?>
