@@ -763,7 +763,7 @@ footer {
     font-size: .9025rem;
     font-weight: 400;
     line-height: 1.5;
-    color: #555252;
+    color: #000000;
     background-color: #fff;
     background-clip: padding-box;
     border: 1px solid #dfe3e7;
@@ -775,7 +775,7 @@ footer {
 }
 
 .dataTable-input:focus {
-    color: #555252;
+    color: #000000;
     background-color: #fff;
     border-color: #5a8dee;
     outline: 0;
