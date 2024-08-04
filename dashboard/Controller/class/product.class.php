@@ -71,6 +71,26 @@ class Product extends common{
             return false;
         }
     }
+    public function Delete(){
+
+        $conn = mysqli_connect('localhost','root','','nepalifootprints');
+        $sql = "delete from product where pid = '$this->pid'";
+
+
+
+        $res=mysqli_query($conn,$sql);
+    
+        if($res){
+            header('Location:./manage-product.php?msg=Product Deleted Successfully');
+            exit();
+        }else{
+            header('Location:./manage-product.php?ErrMsg="Product Deletion Failed');
+            exit();
+        }
+
+
+
+    }
 }
 
 

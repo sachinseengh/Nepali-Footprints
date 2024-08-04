@@ -43,6 +43,15 @@
       padding: 0.5rem 1rem; /* Adjust button padding */
     }
 
+    .swal-confirm-btn {
+    margin-right: 10px;
+    margin-left:10px; /* Adjust the margin as needed */
+}
+
+.swal-cancel-btn {
+    margin-left: 10px; /* Adjust the margin as needed */
+}
+
     
     </style>
 </head>

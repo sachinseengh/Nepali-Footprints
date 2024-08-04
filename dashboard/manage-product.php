@@ -93,7 +93,7 @@ echo "30 ->".$sizes[0].", 31->".$sizes[1].", 32->".$sizes[2].", 33->".$sizes[4].
 ?>
                             </td>
 
-                            
+
                             <td><img src="./images/<?php echo $item['featured_img']; ?>" alt="" srcset="" height="70rem"
                                     width="70rem"></td>
                             <td>
@@ -102,9 +102,11 @@ echo "30 ->".$sizes[0].", 31->".$sizes[1].", 32->".$sizes[2].", 33->".$sizes[4].
                                     <a class="text-dark my-1 mx-1"
                                         href="edit-product.php?id=<?php echo $item['pid'];?> "><i
                                             class='fas fa-pencil-alt' style='font-size:1.5rem'></i></a>
-                                    <a class="text-dark my-1 mx-1"
-                                        href="delete-product.php?id=<?php echo $item['pid'];?> "><i
-                                            class='fas fa-trash-alt' style='font-size:1.5rem;color:red'></i></a>
+
+                                    <a class="text-dark my-1 mx-1 delete-button" data-id="<?php echo $item['pid']; ?>"
+                                        href="#">
+                                        <i class='fas fa-trash-alt' style='font-size:1.5rem;color:red'></i>
+                                    </a>
                                 </div>
                             </td>
                         </tr>
@@ -117,7 +119,47 @@ echo "30 ->".$sizes[0].", 31->".$sizes[1].", 32->".$sizes[2].", 33->".$sizes[4].
 
     </section>
 </div>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const deleteButtons = document.querySelectorAll('.delete-button');
 
+    deleteButtons.forEach(button => {
+        button.addEventListener('click', function (event) {
+            event.preventDefault();
+            const productId = this.getAttribute('data-id');
+
+            const swalWithBootstrapButtons = Swal.mixin({
+                customClass: {
+                    confirmButton: 'btn btn-success swal-confirm-btn',
+                    cancelButton: 'btn btn-danger swal-cancel-btn'
+                },
+                buttonsStyling: false
+            });
+
+            swalWithBootstrapButtons.fire({
+                title: 'Are you sure?',
+                text: "You won't be able to revert this!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonText: 'Yes, delete it!',
+                cancelButtonText: 'No, cancel!',
+                reverseButtons: true
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    // If confirmed, proceed with deletion
+                    window.location.href = `delete-product.php?id=${productId}`;
+                } else if (result.dismiss === Swal.DismissReason.cancel) {
+                    swalWithBootstrapButtons.fire(
+                        'Cancelled',
+                        'Your Product is safe :)',
+                        'error'
+                    );
+                }
+            });
+        });
+    });
+});
+</script>
 <?php
 
        include ('components/footer.php');
