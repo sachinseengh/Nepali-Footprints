@@ -1,5 +1,14 @@
 <?php
 include 'components/header.php';
+include 'dashboard/Controller/class/product.class.php';
+
+
+$product = new Product();
+$items= $product->getProductsMen();
+
+
+
+
 ?>
     <!-- End Header/Navigation -->
 <div class="all">
@@ -46,12 +55,15 @@ include 'components/header.php';
                 <!-- End Column 1 -->
 
                 <!-- Start Column 2 -->
+
+                <?php foreach($items as $item) { ?>
                 <div class="col-6 col-md-4  col-lg-3   mb-5 mb-md-0">
                     <div class="product">
-                    <a class="product-item" href="cart.html">
-                        <img src="images/shoe.jpg" class="img-fluid product-thumbnail">
-                        <h3 class="product-title">Nordic Chair</h3>
-                        <strong class="product-price">$50.00</strong>
+                    <a class="product-item" href="product_detail.php?id=<?php  echo $item['pid']?>">
+                        <img src="dashboard/images/<?php  echo $item['featured_img']?>" class="img-fluid product-thumbnail">
+                        <h3 class="product-title"></h3>
+                        <!-- <strong class="product-price"><?php  echo $item['name']?></strong> -->
+                       <h6><span><?php  echo $item['name']?></span></h6>
 
                         <span class="icon-cross">
                             <img src="images/cross.svg" class="img-fluid">
@@ -59,39 +71,8 @@ include 'components/header.php';
                     </a>
                     </div>
                 </div>
-                <!-- End Column 2 -->
+            <?php } ?>
 
-                <!-- Start Column 3 -->
-                <div class="col-6 col-md-4 col-lg-3   mb-5 mb-md-0">
-                <div class="product">
-                    <a class="product-item" href="cart.html">
-                        <img src="images/shoe.jpg" class="img-fluid product-thumbnail">
-                        <h3 class="product-title">Nordic Chair</h3>
-                        <strong class="product-price">$50.00</strong>
-
-                        <span class="icon-cross">
-                            <img src="images/cross.svg" class="img-fluid">
-                        </span>
-                    </a>
-                    </div>
-                </div>
-                <!-- End Column 3 -->
-
-                <!-- Start Column 4 -->
-                <div class="col-6 col-md-4 col-lg-3    mb-5 mb-md-0">
-                <div class="product">
-                    <a class="product-item" href="cart.html">
-                        <img src="images/shoe.jpg" class="img-fluid product-thumbnail">
-                        <h3 class="product-title">Nordic Chair</h3>
-                        <strong class="product-price">$50.00</strong>
-
-                        <span class="icon-cross">
-                            <img src="images/cross.svg" class="img-fluid">
-                        </span>
-                    </a>
-                    </div>
-                </div>
-                <!-- End Column 4 -->
 
             </div>
         </div>

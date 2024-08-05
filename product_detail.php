@@ -1,38 +1,50 @@
 <?php
 include 'components/header.php';
+include 'dashboard/Controller/class/product.class.php';
+
+$id = $_GET['id'];
+$product =  new Product();
+
+$product->set('pid',$id);
+
+$item = $product->getById();
+
 ?>
 
 <div class="container my-3 text-dark product-details">
+    <h1>Error halne eta</h1>
     <!-- product section -->
     <section class="row">
         <!-- left side -->
         <div class="col-md-6">
             <div class="img-card">
-                <img src="images/image-1.png" alt="" id="featured-image" class="featured-Img img-fluid">
+                <img src="dashboard/images/<?php echo $item->featured_img; ?>" alt="" id="featured-image" class="featured-Img img-fluid">
                 <!-- small img -->
                 <div class="small-Card d-flex  justify-content-center mt-3">
-                    <img src="images/product-1.png" alt="" class="small-Img img-fluid">
-                    <img src="images/small-img-2.png" alt="" class="small-Img img-fluid">
-                    <img src="images/small-img-3.png" alt="" class="small-Img img-fluid">
+                    <img src="dashboard/images/<?php echo $item->add_img1; ?>" alt="" class="small-Img img-fluid">
+                    <img src="dashboard/images/<?php echo $item->add_img2; ?>" alt="" class="small-Img img-fluid">
+                    <img src="dashboard/images/<?php echo $item->add_img3; ?>" alt="" class="small-Img img-fluid">
 
                 </div>
             </div>
         </div>
         <!-- Right side -->
+    
         <div class="col-md-6">
             <div class="product-info pt-3">
-                <h3>LEVI'S® WOMEN'S XL TRUCKER JACKET</h3>
-                <h5>Price: $140 <del>$170</del></h5>
+                <h3><?php echo $item->name; ?></h3>
+                <h5>NPR <?php echo $item->price; ?> 
+                <!-- <del>$170</del> -->
+            </h5>
                 <ul style="padding-left: 1rem;">
-                    <li>Color: White/Grey</li>
-                    <li> Sole Material: Rubber</li>
-                    <li> Closing: Lace-Up</li>
-                    <li> Fit: Regular</li>
-                    <li>Heel Shape: Flat</li>
-                    <li>Brand: Flat</li>
+                <?php echo htmlspecialchars_decode($item->description); ?>
 
                 </ul>
+                <form action="dashboard/Controller/addCart.php" method="GET">
 
+                <input type="hidden" name="id" value="<?php echo $_GET['id']; ?>">
+                
+                <input type="hidden" name="price" value="<?php echo $item->price; ?>">
                 <div class="sizes my-3">
                     <p>Size:</p>
                     <select name="Size" id="size" class="form-select">
@@ -59,11 +71,11 @@ include 'components/header.php';
                 </div>
                   <h6 class="text-success">67 in stock</h6>
                 <div class="quantity my-3">
-                    <input type="number" value="1" min="1" class="form-control w-25 d-inline-block">
-                    <a href="cart.php" class="btn btn-primary ms-2">Add To cart</a>
-                    <a href="cart.php" class="btn btn-secondary ms-2">Buy Now</a>
+                    <input type="number" value="1" min="1" class="form-control w-25 d-inline-block" name="quantity">
+                    <button type="submit" class="btn btn-primary ms-2">Add To Cart</button>
+                    <button type="submit" class="btn btn-secondary ms-2">Buy Now</button>
                 </div>
-
+</form>
                 <div>
                     <p>Delivery:</p>
                     <p>Free standard shipping on orders over $35 before tax, plus free returns.</p>
@@ -88,6 +100,7 @@ include 'components/header.php';
                 </div>
             </div>
         </div>
+        
     </section>
 </div>
 

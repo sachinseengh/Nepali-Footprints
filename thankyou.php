@@ -2,22 +2,7 @@
 include 'components/header.php';
 
 ?>
-		<!-- Start Hero Section -->
-			<div class="hero">
-				<div class="container">
-					<div class="row justify-content-between">
-						<div class="col-lg-5">
-							<div class="intro-excerpt">
-								<h1>Cart</h1>
-							</div>
-						</div>
-						<div class="col-lg-7">
-							
-						</div>
-					</div>
-				</div>
-			</div>
-		<!-- End Hero Section -->
+		
 
 		
 
@@ -33,7 +18,7 @@ include 'components/header.php';
           </span>
           <h2 class="display-3 text-black">Thank you!</h2>
           <p class="lead mb-5">You order was successfuly completed.</p>
-          <p><a href="shop.html" class="btn btn-sm btn-outline-black">Back to shop</a></p>
+          <p><a href="index.php" class="btn btn-sm btn-outline-black">Back to shop</a></p>
         </div>
       </div>
     </div>
@@ -43,9 +28,7 @@ include 'components/header.php';
 		<footer class="footer-section">
 			<div class="container relative">
 
-				<div class="sofa-img">
-					<img src="images/sofa.png" alt="Image" class="img-fluid">
-				</div>
+				
 
 				<div class="row">
 					<div class="col-lg-8">

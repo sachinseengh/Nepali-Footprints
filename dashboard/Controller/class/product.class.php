@@ -7,7 +7,7 @@ require_once('common.class.php');
 class Product extends common{
 
     public $pid, $name,$price,$desc,$category,$sub_category,$featured_img,$add_img1,$add_img2,$add_img3,
-    $s_30,$s_31,$s_32,$s_33,$s_34,$s_35,$s_36,$s_37,$s_38,$s_39,$s_40,$s_41,$s_42,$s_43,$s_44,$s_45;
+    $s_30,$s_31,$s_32,$s_33,$s_34,$s_35,$s_36,$s_37,$s_38,$s_39,$s_40,$s_41,$s_42,$s_43,$s_44,$s_45,$quantity,$size;
 
 
     public function Save(){
@@ -71,6 +71,51 @@ class Product extends common{
             return false;
         }
     }
+
+    public function getProducts(){
+        $conn = mysqli_connect('localhost', 'root', '', 'nepalifootprints');
+     
+        $sql = "select * from product order by pid desc limit 12";
+    
+        $var = mysqli_query($conn,$sql);
+        if ($var->num_rows > 0) {
+            $datalist = $var->fetch_all(MYSQLI_ASSOC);
+            return $datalist;
+        } else {
+            return false;
+        }
+    }
+    public function getProductsMen(){
+        $conn = mysqli_connect('localhost', 'root', '', 'nepalifootprints');
+     
+        $sql = "select * from product where category='men' order by pid desc limit 3";
+    
+        $var = mysqli_query($conn,$sql);
+        if ($var) {
+            $datalist = $var->fetch_all(MYSQLI_ASSOC);
+            return $datalist;
+        } else {
+            return false;
+        }
+    }
+
+    public function getByCategory(){
+        $conn = mysqli_connect('localhost', 'root', '', 'nepalifootprints');
+     
+        $sql = "select * from product where category='$this->category' and sub_category='$this->sub_category'";
+        
+        $var = mysqli_query($conn,$sql);
+        if ($var->num_rows > 0) {
+            $datalist = $var->fetch_all(MYSQLI_ASSOC);
+            return $datalist;
+        } else {
+            return false;
+        }
+    }
+
+    
+
+
     public function Delete(){
 
         $conn = mysqli_connect('localhost','root','','nepalifootprints');
@@ -87,10 +132,10 @@ class Product extends common{
             header('Location:./manage-product.php?ErrMsg="Product Deletion Failed');
             exit();
         }
-
-
-
     }
+
+
+  
 }
 
 

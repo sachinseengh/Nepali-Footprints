@@ -1,17 +1,26 @@
 <?php
 include 'components/header.php';
 
+include 'dashboard/Controller/class/cart.class.php';
+
+$cart = new Cart();
+
+$items = $cart->retrieve();
+
+
+$total = $cart->totalAmount();
 
 ?>
 
 <div class="container mt-2 mb-0 " >
-		
+<h1>Error halne eta</h1>
 			<span ><h4 class="mb=0" style="color:black;">Cart</h4></span>
 			<hr class="my-0">
 			<div>
 		
 
 		<div class="untree_co-section before-footer-section cart-margin">
+      
             <div class="container">
               <div class="row mb-3">
                 <form class="col-md-12" method="post">
@@ -28,53 +37,33 @@ include 'components/header.php';
                         </tr>
                       </thead>
                       <tbody>
+                    <?php foreach($items as $item){ ?>
                         <tr>
                           <td class="product-thumbnail">
-                            <img src="images/product-1.png" alt="Image" class="img-fluid">
+                            <img src="dashboard/images/<?php echo $item['featured_img']?>" alt="Image" class="img-fluid">
                           </td>
                           <td class="product-name">
-                            <h2 class="h5 text-black">Product 1</h2>
+                            <h2 class="h5 text-black"><?php echo $item['product_name']?></h2>
                           </td>
-                          <td class="price">$49</td>
+                          <td class="price">NPR <?php echo $item['product_price']?></td>
                           <td>
                             <div class="input-group mb-3 d-flex align-items-center quantity-container" style="max-width: 120px;">
                               <div class="input-group-prepend">
-                              <a href="hel.php?id=1"> <button class="btn btn-outline-black decrease" type="button" onclick="decreaseTotal()">&minus;</button></a>
+                               <a href="dashboard/Controller/decreaseCart.php?id=<?php echo $item['cartId'];?>" class="btn btn-outline-black decrease" type="button" >&minus;</a>
                               </div>
-                              <input type="text" class="form-control text-center quantity-amount" value="1" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1">
+                              <input type="number" min="1" disabled class="form-control text-center quantity-amount"  value="<?php echo $item['quantity'];?>" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1">
                               <div class="input-group-append">
-                                <button class="btn btn-outline-black increase" type="button" onclick="increaseTotal()">&plus;</button>
+                                <a href="dashboard/Controller/increaseCart.php?id=<?php echo $item['cartId'];?>" class="btn btn-outline-black increase" type="button" >&plus;</a>
                               </div>
                             </div>
         
                           </td>
-                          <td class="total-amount">$49</td>
-                          <td><a href="" class="btn btn-black btn-sm" onclick="deleteRow()">X</a></td>
+                          <!-- <td class="total-amount"><?php echo $item['total']?></td> -->
+                          <td class="total-amount">NPR <?php echo $item['total']?> </td>
+                          <td><a href="dashboard/Controller/deletecart.php?id=<?php  echo $item['pid']?>" class="btn btn-black btn-sm">X</a></td>
                         </tr>
-        
-                        <tr>
-                          <td class="product-thumbnail">
-                            <img src="images/product-2.png" alt="Image" class="img-fluid">
-                          </td>
-                          <td class="product-name">
-                            <h2 class="h5 text-black">Product 2</h2>
-                          </td>
-                          <td>$49.00</td>
-                          <td>
-                            <div class="input-group mb-3 d-flex align-items-center quantity-container" style="max-width: 120px;">
-                              <div class="input-group-prepend">
-                                <button class="btn btn-outline-black decrease" type="button">&minus;</button>
-                              </div>
-                              <input type="text" class="form-control text-center quantity-amount" value="1" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1">
-                              <div class="input-group-append">
-                                <button class="btn btn-outline-black increase" type="button">&plus;</button>
-                              </div>
-                            </div>
-        
-                          </td>
-                          <td>$49.00</td>
-                          <td><a href="#" class="btn btn-black btn-sm">X</a></td>
-                        </tr>
+      <?php } ?>
+                        
                       </tbody>
                     </table>
                   </div>
@@ -118,7 +107,7 @@ include 'components/header.php';
                           <span class="text-black">Subtotal</span>
                         </div>
                         <div class="col-md-6 text-right">
-                          <strong class="text-black">$230.00</strong>
+                          <strong class="text-black"> <?php echo $total ;?></strong>
                         </div>
                       </div>
                       <div class="row mb-2">
@@ -126,7 +115,7 @@ include 'components/header.php';
                           <span class="text-black">Total</span>
                         </div>
                         <div class="col-md-6 text-right">
-                          <strong class="text-black">$230.00</strong>
+                          <strong class="text-black"> <?php echo $total ;?></strong>
                         </div>
                       </div>
         
@@ -142,7 +131,8 @@ include 'components/header.php';
               </div>
             </div>
           </div>
-		
+
+
 
 		<!-- Start Footer Section -->
 <?php

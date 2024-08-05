@@ -1,6 +1,16 @@
 <?php
 
 include 'components/header.php';
+
+include 'dashboard/Controller/class/cart.class.php';
+
+$cart = new Cart();
+
+$items = $cart->getCart();
+// print_r($items);
+
+$total = $cart->totalAmount();
+
 ?>
 
 		<div class="untree_co-section">
@@ -17,10 +27,13 @@ include 'components/header.php';
 		          <h2 class="h3 mb-3 text-black">Billing Details</h2>
 		          <div class="p-3 p-lg-5 border bg-white">
 		            
+				  <form action="dashboard/Controller/placeOrder.php" method="post">
+
+				  
 		            <div class="form-group row">
 		              <div class="col-md-12">
 		                <label for="c_fname" class="text-black">Full Name <span class="text-danger">*</span></label>
-		                <input type="text" class="form-control" id="c_fname" name="c_fname">
+		                <input type="text" class="form-control" id="fname" name="fname">
 		              </div>
 		              <!-- <div class="col-md-6">
 		                <label for="c_lname" class="text-black">Last Name <span class="text-danger">*</span></label>
@@ -30,26 +43,26 @@ include 'components/header.php';
 
 		            <div class="form-group row">
 		              <div class="col-md-12">
-		                <label for="c_companyname" class="text-black">Email </label>
-		                <input type="text" class="form-control" id="c_email" name="c_email">
+		                <label for="c_companyname" class="text-black">Email<span class="text-danger">*</span> </label>
+		                <input type="text" class="form-control" id="c_email" name="email">
 		              </div>
 		            </div>
 
-		            <div class="form-group row">
+		            <!-- <div class="form-group row">
 		              <div class="col-md-12">
 		                <label for="c_address" class="text-black">Address <span class="text-danger">*</span></label>
-		                <input type="text" class="form-control" id="c_address" name="c_address" placeholder="Street address">
+		                <input type="text" class="form-control" id="c_address" name="address" placeholder="Street address">
 		              </div>
 		            </div>
- 
-					<div class="my-2">
+  -->
+					<!-- <div class="my-2">
 
           <input type="checkbox" name="same_add" id="same_add"> Shipping Address same as Billing Address
-					</div>
+					</div> -->
 					<div class="form-group row">
 		              <div class="col-md-12">
 		                <label for="c_address" class="text-black"> Delivery Address <span class="text-danger">*</span></label>
-		                <input type="text" class="form-control" id="c_daddress" name="c_daddress" placeholder="Delivery  address">
+		                <input type="text" class="form-control" id="c_daddress" name="daddress" placeholder="Delivery  address">
 		              </div>
 		            </div>
 
@@ -73,10 +86,11 @@ include 'components/header.php';
 		              </div> -->
 		              <div class="col-md-6">
 		                <label for="c_phone" class="text-black">Phone <span class="text-danger">*</span></label>
-		                <input type="text" class="form-control" id="c_phone" name="c_phone" placeholder="Phone Number">
+		                <input type="text" class="form-control" id="c_phone" name="phone" placeholder="Phone Number">
 		              </div>
 		            </div>
 
+				
 		            <!-- <div class="form-group">
 		              <label for="c_create_account" class="text-black" data-bs-toggle="collapse" href="#create_an_account" role="button" aria-expanded="false" aria-controls="create_an_account"><input type="checkbox" value="1" id="c_create_account"> Create an account?</label>
 		              <div class="collapse" id="create_an_account">
@@ -168,16 +182,16 @@ include 'components/header.php';
 		              </div>
 		            </div> -->
 
-		            <div class="form-group">
+		            <!-- <div class="form-group">
 		              <label for="c_order_notes" class="text-black">Order Notes</label>
 		              <textarea name="c_order_notes" id="c_order_notes" cols="30" rows="5" class="form-control" placeholder="Write your notes here..."></textarea>
-		            </div>
+		            </div> -->
 
 		          </div>
 		        </div>
 		        <div class="col-md-6">
 
-		          <div class="row mb-2">
+		          <!-- <div class="row mb-2">
 		            <div class="col-md-12">
 		              <h2 class="h3 mb-3 text-black">Coupon Code</h2>
 		              <div class="p-3 pb-0 p-lg-5 border bg-white">
@@ -192,7 +206,7 @@ include 'components/header.php';
 
 		              </div>
 		            </div>
-		          </div>
+		          </div> -->
 
 		          <div class="row mb-5">
 		            <div class="col-md-12">
@@ -204,21 +218,20 @@ include 'components/header.php';
 		                    <th>Total</th>
 		                  </thead>
 		                  <tbody>
+
+						  <?php foreach($items as $item) { ?>
 		                    <tr>
-		                      <td>Top Up T-Shirt <strong class="mx-2">x</strong> 1</td>
-		                      <td>$250.00</td>
+		                      <td><?php echo $item['product_name'];?> <strong class="mx-2">x</strong><?php echo $item['quantity'];?> </td>
+		                      <td>NPR <?php echo $item['total'];?></td>	
 		                    </tr>
-		                    <tr>
-		                      <td>Polo Shirt <strong class="mx-2">x</strong>   1</td>
-		                      <td>$100.00</td>
-		                    </tr>
-		                    <tr>
+							<?php  } ?>
+		                   
 		                      <td class="text-black font-weight-bold"><strong>Cart Subtotal</strong></td>
-		                      <td class="text-black">$350.00</td>
+		                      <td class="text-black">NPR <?php echo $total ?></td>
 		                    </tr>
 		                    <tr>
 		                      <td class="text-black font-weight-bold"><strong>Order Total</strong></td>
-		                      <td class="text-black font-weight-bold"><strong>$350.00</strong></td>
+		                      <td class="text-black font-weight-bold"><strong>NPR <?php echo $total ?></strong></td>
 		                    </tr>
 		                  </tbody>
 		                </table>
@@ -254,9 +267,9 @@ include 'components/header.php';
 		                </div>
 
 		                <div class="form-group">
-		                  <button class="btn btn-black btn-lg py-3 btn-block" onclick="window.location='thankyou.php'">Place Order</button>
+		                  <button type="submit" class="btn btn-black btn-lg py-3 btn-block" >Place Order</Button>
 		                </div>
-
+						</form>
 		              </div>
 		            </div>
 		          </div>

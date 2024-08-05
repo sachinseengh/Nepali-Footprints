@@ -19,6 +19,7 @@
     <link href="./css/additional.css" rel="stylesheet">
     <link rel="stylesheet" href="css/product_detail.css">
     <title>Nepali Footprints </title>
+  
 </head>
 
 <body>
@@ -80,10 +81,10 @@
                             MENS
                         </a>
                         <ul class="dropdown-menu   drop-down" aria-labelledby="navbarDropdownMenuLink">
-                            <li ><a class="dropdown-item" href="shop.php">Sports</a></li>
-                            <li><a class="dropdown-item" href="shop.php">Casuals</a></li>
-                            <li><a class="dropdown-item" href="shop.php">Boot</a></li>
-                            <li><a class="dropdown-item" href="shop.php">Formal</a></li>
+                            <li ><a class="dropdown-item" href="shop.php?Category=Men&SubCategory=Sports">Sports</a></li>
+                            <li><a class="dropdown-item" href="shop.php?Category=Men&SubCategory=Casuals">Casuals</a></li>
+                            <li><a class="dropdown-item" href="shop.php?Category=Men&SubCategory=Boot">Boot</a></li>
+                            <li><a class="dropdown-item" href="shop.php?Category=Men&SubCategory=Formal">Formal</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown ">
@@ -92,10 +93,10 @@
                            WOMENS
                         </a>
                         <ul class="dropdown-menu drop-down" aria-labelledby="navbarDropdownMenuLink">
-                            <li ><a class="dropdown-item" href="shop.php">Sports</a></li>
-                            <li><a class="dropdown-item" href="shop.php">Casuals</a></li>
-                            <li><a class="dropdown-item" href="shop.php">Boot</a></li>
-                            <li><a class="dropdown-item" href="shop.php">Formal</a></li>
+                            <li ><a class="dropdown-item" href="shop.php?Category=Women&SubCategory=Sports">Sports</a></li>
+                            <li><a class="dropdown-item" href="shop.php?Category=Women&SubCategory=Casuals">Casuals</a></li>
+                            <li><a class="dropdown-item" href="shop.php?Category=Women&SubCategory=Boot">Boot</a></li>
+                            <li><a class="dropdown-item" href="shop.php?Category=Women&SubCategory=Formal">Formal</a></li>
                         </ul>
                     </li>
                     
