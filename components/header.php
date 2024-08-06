@@ -18,6 +18,8 @@
     <link href="./css/style.css" rel="stylesheet">
     <link href="./css/additional.css" rel="stylesheet">
     <link rel="stylesheet" href="css/product_detail.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
     <title>Nepali Footprints </title>
   
 </head>

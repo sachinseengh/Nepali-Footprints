@@ -27,13 +27,13 @@ $total = $cart->totalAmount();
 		          <h2 class="h3 mb-3 text-black">Billing Details</h2>
 		          <div class="p-3 p-lg-5 border bg-white">
 		            
-				  <form action="dashboard/Controller/placeOrder.php" method="post">
+				  <form action="dashboard/Controller/placeOrder.php" method="post" id="orderForm">
 
 				  
 		            <div class="form-group row">
 		              <div class="col-md-12">
-		                <label for="c_fname" class="text-black">Full Name <span class="text-danger">*</span></label>
-		                <input type="text" class="form-control" id="fname" name="fname">
+		                <label for="fullname" class="text-black">Full Name <span class="text-danger">*</span></label>
+		                <input type="text" class="form-control" id="fname" name="fullname">
 		              </div>
 		              <!-- <div class="col-md-6">
 		                <label for="c_lname" class="text-black">Last Name <span class="text-danger">*</span></label>
@@ -267,7 +267,8 @@ $total = $cart->totalAmount();
 		                </div>
 
 		                <div class="form-group">
-		                  <button type="submit" class="btn btn-black btn-lg py-3 btn-block" >Place Order</Button>
+		                  
+						  <button type="button" class="btn btn-black btn-lg py-3 btn-block" id="placeOrderButton">Place Order</button>
 		                </div>
 						</form>
 		              </div>
@@ -279,6 +280,41 @@ $total = $cart->totalAmount();
 		      <!-- </form> -->
 		    </div>
 		  </div>
+
+
+		  <script>
+  document.getElementById('placeOrderButton').addEventListener('click', function() {
+    const swalWithBootstrapButtons = Swal.mixin({
+      customClass: {
+        confirmButton: "btn btn-success",
+        cancelButton: "btn btn-danger"
+      },
+      buttonsStyling: false
+    });
+
+    swalWithBootstrapButtons.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonText: "Yes, place order!",
+      cancelButtonText: "No, cancel!",
+      reverseButtons: true
+    }).then((result) => {
+      if (result.isConfirmed) {
+        // Submit the form
+        document.getElementById('orderForm').submit();
+      } else if (result.dismiss === Swal.DismissReason.cancel) {
+        swalWithBootstrapButtons.fire({
+          title: "Cancelled",
+          text: "Your order has been cancelled.",
+          icon: "error"
+        });
+      }
+    });
+  });
+</script>
+
 
 		<!-- Start Footer Section -->
 		<footer class="footer-section">
