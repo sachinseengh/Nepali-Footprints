@@ -1,10 +1,26 @@
-<?php include('components/header.php'); ?>
+<?php include('components/header.php'); 
+require_once('../dashboard/Controller/class/user.class.php');
+    
+    $user= new User();
+    $user->set('email','sachinseengh@gmail.com');
+
+
+    $row= $user->retrieve();
+    
+
+
+?>
+
+
+
+
+
 <div class="container my-3  px-4" >
     <h1 class="text-center title" style="font-family:'Inter, sans-serif">Update Details</h1>
     <div class="row justify-content-center">
         <div class="card px-0" style="width: 100%; max-width: 40rem;"> <!-- Adjusted max-width here -->
             <div class="card-body">
-                <form class="row g-3" method="get" action="./operation/edit_process.php">
+                <form class="row g-3" method="post" action="../dashboard/Controller/userOperations/editProcess.php">
                     <div class="col-md-6"> <!-- Changed to use Bootstrap's responsive classes -->
                         <label for="inputEmail4" class="form-label">Email</label>
                         <input type="email" class="form-control" id="inputEmail4" value="<?php echo $row['email']; ?>" disabled name="email">
@@ -16,6 +32,10 @@
                     <div class="col-12">
                         <label for="inputAddress" class="form-label">Name</label>
                         <textarea class="form-control" id="inputAddress" name="name"><?php echo $row['name']; ?></textarea>
+                    </div>
+                    <div class="col-12">
+                        <label for="inputAddress" class="form-label">Phone</label>
+                        <textarea class="form-control" id="inputAddress" name="phone"><?php echo $row['phone']; ?></textarea>
                     </div>
                     <div class="col-12">
                         <label for="inputAddress2" class="form-label">Address</label>
@@ -38,5 +58,6 @@
 <br>
 <br>
 <br>
+
 
 <?php include('components/footer.php'); ?>

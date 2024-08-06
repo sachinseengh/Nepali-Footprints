@@ -1,4 +1,5 @@
-<?php include('./components/header.php'); ?>
+<?php include('./components/header.php'); 
+?>
 
 <!-- Alert msg -->
 <?php if(isset($_GET['alert'])): ?>
@@ -14,7 +15,7 @@
         <div class="col-md-8 col-lg-6">
             <div class="card">
                 <div class="card-body">
-                    <form action="./operation/login_process.php" method="get">
+                    <form action="../dashboard/Controller/userOperations/loginProcess.php" method="post">
                         <div class="mb-3">
                             <label for="exampleInputEmail1" class="form-label">Email address</label>
                             <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email">

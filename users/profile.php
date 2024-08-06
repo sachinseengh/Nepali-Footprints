@@ -26,7 +26,7 @@
 
                     <div class="col-12">
                     <a href="edit.php" class="btn btn-primary">Edit</a>
-                        <a href="login.php" class="btn btn-danger">Delete</a>
+                        <a  class="btn btn-danger delete-button">Delete</a>
                     </div>
 
                 </div>
@@ -34,6 +34,48 @@
         </div>
     </div>
 </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const deleteButtons = document.querySelectorAll('.delete-button');
+
+    deleteButtons.forEach(button => {
+        button.addEventListener('click', function (event) {
+            event.preventDefault();
+            
+
+            const swalWithBootstrapButtons = Swal.mixin({
+                customClass: {
+                    confirmButton: 'btn btn-danger swal-confirm-btn',
+                    cancelButton: 'btn btn-secondary swal-cancel-btn'
+                },
+                buttonsStyling: false
+            });
+
+            swalWithBootstrapButtons.fire({
+                title: 'Are you sure?',
+                text: "You won't be able to revert this!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonText: 'Yes, delete it!',
+                cancelButtonText: 'No, cancel!',
+                reverseButtons: true
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    // If confirmed, proceed with deletion
+                    window.location.href = `../dashboard/Controller/userOperations/deleteProcess.php`;
+                } else if (result.dismiss === Swal.DismissReason.cancel) {
+                    swalWithBootstrapButtons.fire(
+                        'Cancelled',
+                        'Your Account is safe :)',
+                        'error'
+                    );
+                }
+            });
+        });
+    });
+});
+</script>
 
 
 <?php include('components/footer.php'); ?>
