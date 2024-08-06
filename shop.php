@@ -25,7 +25,13 @@ $items = $product->getByCategory();
 <div class="container mt-2 mb-0 d-flex flex-row  justify-content-between">
     <div style="width:90%">
         <span>
-            <!-- <h4 class="mb=0" style="color:black;"><?php echo $category."->".$SubCategory ?></h4> -->
+            <h4 class="mb=0" style="color:black;">
+                <?php 
+                if(isset($_GET['SubCategory']) && isset($_GET['Category'])){
+                     echo $_GET['Category']."->".$_GET['SubCategory'] ;
+                     } 
+                     ?>
+            </h4>
         </span>
     </div>
     <div>

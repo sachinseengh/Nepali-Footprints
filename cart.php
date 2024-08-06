@@ -13,7 +13,46 @@ $total = $cart->totalAmount();
 ?>
 
 <div class="container mt-2 mb-0 " >
-<h1>Error halne eta</h1>
+
+                <?php if (isset($_GET['Msg'])) { ?>
+                <script>
+                const Toast = Swal.mixin({
+                    toast: true,
+                    position: "top-center",
+                    showConfirmButton: false,
+                    timer: 1000,
+                    timerProgressBar: true,
+                    didOpen: (toast) => {
+                        toast.onmouseenter = Swal.stopTimer;
+                        toast.onmouseleave = Swal.resumeTimer;
+                    }
+                });
+                Toast.fire({
+                    icon: "success",
+                    title: '<?php echo $_GET['Msg']; ?>'
+                });
+                </script>
+                <?php } ?>
+
+                <?php if (isset($_GET['ErrMsg'])) { ?>
+                <script>
+               const Toast = Swal.mixin({
+                    toast: true,
+                    position: "top-center",
+                    showConfirmButton: false,
+                    timer: 1500,
+                    timerProgressBar: true,
+                    didOpen: (toast) => {
+                        toast.onmouseenter = Swal.stopTimer;
+                        toast.onmouseleave = Swal.resumeTimer;
+                    }
+                });
+                Toast.fire({
+                    icon: "error",
+                    title: '<?php echo $_GET['ErrMsg']; ?>'
+                });
+                </script>
+                <?php } ?> 
 			<span ><h4 class="mb=0" style="color:black;">Cart</h4></span>
 			<hr class="my-0">
 			<div>
@@ -32,6 +71,8 @@ $total = $cart->totalAmount();
                           <th class="product-name">Product</th>
                           <th class="product-price">Price</th>
                           <th class="product-quantity">Quantity</th>
+                          <th class="product-size">Size</th>
+                        
                           <th class="product-total">Total</th>
                           <th class="product-remove">Remove</th>
                         </tr>
@@ -51,14 +92,23 @@ $total = $cart->totalAmount();
                               <div class="input-group-prepend">
                                <a href="dashboard/Controller/decreaseCart.php?id=<?php echo $item['cartId'];?>" class="btn btn-outline-black decrease" type="button" >&minus;</a>
                               </div>
+
+                            
+
                               <input type="number" min="1" disabled class="form-control text-center quantity-amount"  value="<?php echo $item['quantity'];?>" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1">
+
+
                               <div class="input-group-append">
                                 <a href="dashboard/Controller/increaseCart.php?id=<?php echo $item['cartId'];?>" class="btn btn-outline-black increase" type="button" >&plus;</a>
                               </div>
+
                             </div>
-        
+                            
                           </td>
-                          <!-- <td class="total-amount"><?php echo $item['total']?></td> -->
+                          <td class="product-size"> <?php echo $item['size']?></td>
+                           
+        
+                        
                           <td class="total-amount">NPR <?php echo $item['total']?> </td>
                           <td><a href="dashboard/Controller/deletecart.php?id=<?php  echo $item['pid']?>" class="btn btn-black btn-sm">X</a></td>
                         </tr>

@@ -8,7 +8,7 @@ class Cart extends common{
 
     public function save() {
         $conn = mysqli_connect('localhost','root','','nepalifootprints');
-        $sql = "insert into cart (pid,quantity,price) values('$this->pid','$this->quantity','$this->price')";
+        $sql = "insert into cart (pid,quantity,price,size) values('$this->pid','$this->quantity','$this->price','$this->size')";
 
         echo $sql;
 
@@ -27,7 +27,7 @@ class Cart extends common{
 public function retrieve(){
     $conn = mysqli_connect('localhost','root','','nepalifootprints');
 
-    $sql = "SELECT  cart.cart_id As cartId, cart.quantity AS quantity ,cart.total AS total, product.pid AS pid, product.name AS product_name,  product.price AS product_price,  product.featured_img FROM  cart INNER JOIN  product ON  cart.pid = product.pid ";
+    $sql = "SELECT  cart.cart_id As cartId, cart.quantity AS quantity ,cart.total AS total ,cart.size AS size, product.pid AS pid, product.name AS product_name,  product.price AS product_price,  product.featured_img FROM  cart INNER JOIN  product ON  cart.pid = product.pid ";
 
 
     $res = mysqli_query($conn,$sql);
@@ -82,7 +82,7 @@ public function totalAmount(){
 public function getCart(){
     $conn = mysqli_connect('localhost','root','','nepalifootprints');
 
-    $sql = "SELECT  cart.cart_id AS cartId, cart.quantity AS quantity,cart.total As total, product.pid AS pid, product.name AS product_name,  product.price AS product_price,  product.featured_img FROM  cart INNER JOIN  product ON  cart.pid = product.pid ";
+    $sql = "SELECT  cart.cart_id AS cartId, cart.quantity AS quantity,cart.size AS size,cart.total As total, product.pid AS pid, product.name AS product_name,  product.price AS product_price,  product.featured_img FROM  cart INNER JOIN  product ON  cart.pid = product.pid ";
 
     $res = mysqli_query($conn,$sql);
 

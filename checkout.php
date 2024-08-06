@@ -221,7 +221,7 @@ $total = $cart->totalAmount();
 
 						  <?php foreach($items as $item) { ?>
 		                    <tr>
-		                      <td><?php echo $item['product_name'];?> <strong class="mx-2">x</strong><?php echo $item['quantity'];?> </td>
+		                      <td><?php echo $item['product_name'];?> <strong class="mx-2">x</strong><?php echo $item['quantity'];?><strong class="mx-2">x</strong>Size-<?php echo $item['size'];?></td>
 		                      <td>NPR <?php echo $item['total'];?></td>	
 		                    </tr>
 							<?php  } ?>

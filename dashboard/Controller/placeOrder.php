@@ -23,7 +23,7 @@ foreach($items as $item){
 $conn = mysqli_connect('localhost','root','','nepalifootprints');
 $order_date= date('y-m-d H:i:s');
 
-$sql = "insert into orders(customer_name,product,quantity,price,total,delivery_address,phone,email,order_date) values('$name','".$item['product_name']."','".$item['quantity']."','".$item['product_price']."','".$item['total']."','$address','$phone','$email','$order_date')";
+$sql = "insert into orders(customer_name,product,quantity,size,price,total,delivery_address,phone,email,order_date) values('$name','".$item['product_name']."','".$item['quantity']."','".$item['size']."','".$item['product_price']."','".$item['total']."','$address','$phone','$email','$order_date')";
 
 
 
@@ -32,8 +32,12 @@ $res = mysqli_query($conn,$sql);
 }
 if($res){
     
-    header('Location: /NepaliFootprints/thankyou.php?Msg=' . urlencode("Order placed Successfully"));
+    header('Location: /NepaliFootprints/thankyou.php?msg=' . urlencode("Order placed Successfully"));
     exit();
+}else{
+    header('Location: /NepaliFootprints/checkout.php?ErrMsg=' . urlencode("Something Went Wrong"));
+    exit();
+
 }
 
 

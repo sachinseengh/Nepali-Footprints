@@ -12,7 +12,7 @@ $item = $product->getById();
 ?>
 
 <div class="container my-3 text-dark product-details">
-    <h1>Error halne eta</h1>
+
     <!-- product section -->
     <section class="row">
         <!-- left side -->

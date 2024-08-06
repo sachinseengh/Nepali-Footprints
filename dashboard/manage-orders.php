@@ -41,6 +41,7 @@ $orders= $Order->retrieve();
                             <th>OrderBy</th>
                             <th>Product</th>
                             <th>Quantity</th>
+                            <th>Size</th>
                             <th>Price</th>
                             <th>Total Amount</th>
                             <th>Phone</th>
@@ -58,7 +59,9 @@ $orders= $Order->retrieve();
                             <td><?php echo $order['oid'];?></td>
                             <td><?php echo $order['customer_name'];?></td>
                             <td><?php echo $order['product'];?></td>
+                            
                             <td><?php echo $order['quantity'];?></td>
+                            <td><?php echo $order['size'];?></td>
                             <td>NPR <?php echo $order['price'];?></td>
                             <td>NPR <?php echo $order['total'];?></td>
                             <td><?php echo $order['phone'];?></td>
