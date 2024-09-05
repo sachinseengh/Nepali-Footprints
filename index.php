@@ -85,7 +85,7 @@ $items= $product->getProductsMen();
             <div class="row justify-content-between ">
                 <div class="col-lg-6 px-2 ">
                     <h2 class="section-title">Why Choose Us</h2>
-                    <p>Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam vulputate velit
+                    <p>Becausee we Provide Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam vulputate velit
                         imperdiet dolor tempor tristique.</p>
 
                     <div class="row my-5 px-3">
