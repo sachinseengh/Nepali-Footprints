@@ -60,7 +60,7 @@ $items= $product->getProductsMen();
                 <div class="col-6 col-md-4  col-lg-3   mb-5 mb-md-0">
                     <div class="product">
                     <a class="product-item" href="product_detail.php?id=<?php  echo $item['pid']?>">
-                        <img src="dashboard/images/<?php  echo $item['featured_img']?>" class="img-fluid product-thumbnail">
+                        <img src="dashboard/images/<?php  echo $item['featured_img']?>" class="product-thumbnail" height="200" width="200">
                         <h3 class="product-title"></h3>
                         <!-- <strong class="product-price"><?php  echo $item['name']?></strong> -->
                        <h6><span><?php  echo $item['name']?></span></h6>
@@ -92,7 +92,7 @@ $items= $product->getProductsMen();
                         <div class="col-6 col-md-6">
                             <div class="feature">
                                 <div class="icon">
-                                    <img src="images/truck.svg" alt="Image" class="imf-fluid">
+                                    <img src="images/truck.svg" alt="Image" class="img-fluid">
                                 </div>
                                 <h3>Fast &amp; Free Shipping</h3>
                                 <p>Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam

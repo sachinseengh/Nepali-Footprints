@@ -11,7 +11,7 @@ $item = $product->getById();
 
 ?>
 
-<div class="container my-3 text-dark product-details">
+<div class="container my-3 px-5 text-dark product-details">
 
     <!-- product section -->
     <section class="row">

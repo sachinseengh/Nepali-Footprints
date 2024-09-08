@@ -13,30 +13,36 @@ include('components/header.php');
             <div class="card">
             
                 <div class="card-body">
-                    <form  action="../dashboard/Controller/userOperations/registerProcess.php" class="row g-3" method="post" role="form" noValidate>
+                    <form id='registerForm'  action="../dashboard/Controller/userOperations/registerProcess.php" class="row g-3" method="post">
                         <div class="col-md-6">
-                            <label for="inputEmail4" class="form-label">Email</label>
-                            <input type="email" class="form-control" id="inputEmail4" name="email">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" name="email">
+                            <span id="emailErr" style="color:red;"></span>
                         </div>
                         <div class="col-md-6">
-                            <label for="inputPassword4" class="form-label">Password</label>
-                            <input type="password" class="form-control" id="inputPassword4" name="password">
+                            <label for="password" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="password" name="password">
+                            <span id="passwordErr" style="color:red;"></span>
                         </div>
                         <div class="col-12">
-                            <label for="inputAddress" class="form-label">Name</label>
-                            <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St" name="name">
+                            <label for="name" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="name"  name="name">
+                            <span id="nameErr" style="color:red;"></span>
                         </div>
                         <div class="col-md-6">
-                            <label for="inputCity" class="form-label">Phone</label>
-                            <input type="text" class="form-control" id="inputCity" name="phone">
+                            <label for="phone" class="form-label">Phone</label>
+                            <input type="text" class="form-control" id="phone" name="phone">
+                            <span id="phoneErr" style="color:red;"></span>
                         </div>
                         <div class="col-md-6">
-                            <label for="inputCity" class="form-label">City</label>
-                            <input type="text" class="form-control" id="inputCity" name="city">
+                            <label for="city" class="form-label">City</label>
+                            <input type="text" class="form-control" id="city" name="city">
+                            <span id="cityErr" style="color:red;"></span>
                         </div>
                         <div class="col-12">
-                            <label for="inputAddress2" class="form-label">Address</label>
-                            <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor" name="address">
+                            <label for="address" class="form-label">Address</label>
+                            <input type="text" class="form-control" id="address" placeholder="Apartment, studio, or floor" name="address">
+                            <span id="addressErr" style="color:red;"></span>
                         </div>
                        
                         <div class="col-12">

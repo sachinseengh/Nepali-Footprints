@@ -56,10 +56,10 @@ $items = $product->getByCategory();
 
      <?php   foreach($items as $item) { ?>
             <div class="col-6 col-md-3 col-sm-6 mb-5">
-                <div class="product">
+                <div class="product" style="text:green">
 
                     <a class="product-item" href="product_detail.php?id=<?php echo $item['pid'];?>">
-                        <img src="dashboard/images/<?php echo $item['featured_img'];?>" class="img-fluid product-thumbnail" width="200" height="200">
+                        <img src="dashboard/images/<?php echo $item['featured_img'];?>" class="product-thumbnail" width="200" height="250">
                         <h3 class="product-title"><?php echo $item['name'];?></h3>
                         <strong class="product-price">NPR <?php echo $item['price'];?></strong>
 

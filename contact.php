@@ -60,7 +60,7 @@ include 'components/header.php';
                 </div>
               </div>
 <hr>
-              <form>
+              <!-- <form>
                 <div class="row">
                   <div class="col-6">
                     <div class="form-group">
@@ -86,7 +86,7 @@ include 'components/header.php';
                 </div>
 
                 <button type="submit" class="btn btn-primary-hover-outline">Send Message</button>
-              </form>
+              </form> -->
 
             </div>
 

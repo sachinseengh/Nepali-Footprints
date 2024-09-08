@@ -18,7 +18,7 @@ class User extends common {
             header('Location: /NepaliFootprints/users/login.php?Msg=' . urlencode("Registered Successfully, Now you can log in"));
             exit();
         }else{
-            header('Location: /NepaliFootprints/users/register.php?Msg=' . urlencode("Registration Failed"));
+            header('Location: /NepaliFootprints/users/register.php?ErrMsg=' . urlencode("Registration Failed"));
             exit();
         }
 
@@ -48,7 +48,7 @@ class User extends common {
             header('Location: /NepaliFootprints/users/profile.php');
             exit();
         }else{
-            header('Location: /NepaliFootprints/users/login.php?Msg=' . urlencode("Incorrect Credentials"));
+            header('Location: /NepaliFootprints/users/login.php?ErrMsg=' . urlencode("Incorrect Credentials"));
             exit();
         }
     }

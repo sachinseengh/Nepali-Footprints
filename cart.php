@@ -18,7 +18,7 @@ $total = $cart->totalAmount();
                 <script>
                 const Toast = Swal.mixin({
                     toast: true,
-                    position: "top-center",
+                    position: "top-right",
                     showConfirmButton: false,
                     timer: 1000,
                     timerProgressBar: true,
@@ -38,7 +38,7 @@ $total = $cart->totalAmount();
                 <script>
                const Toast = Swal.mixin({
                     toast: true,
-                    position: "top-center",
+                    position: "top-right",
                     showConfirmButton: false,
                     timer: 1500,
                     timerProgressBar: true,
