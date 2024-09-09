@@ -1,4 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
+
+
+
     // For loginForm (if you have one on a different page)
     const loginForm = document.getElementById('loginForm');
     if (loginForm) {
@@ -84,4 +87,89 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
-});
+
+
+    const orderForm = document.getElementById('orderForm');
+
+    if (orderForm) {
+        orderForm.addEventListener('submit', function (event) {
+            const name = document.getElementById('fname').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const daddress = document.getElementById('daddress').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+    
+            const nameErr = document.querySelector('.nameErr');
+            const emailErr = document.querySelector('.emailErr');
+            const daddressErr = document.querySelector('.daddressErr');
+            const phoneErr = document.querySelector('.phoneErr');
+    
+            let isValid = true;
+    
+            nameErr.textContent = '';
+            emailErr.textContent = '';
+            daddressErr.textContent = '';
+            phoneErr.textContent = '';
+    
+            if (name === '') {
+                isValid = false;
+                nameErr.textContent = "Name field cannot be empty";
+            }
+    
+            if (email === '') {
+                isValid = false;
+                emailErr.textContent = "Email field cannot be empty";
+            }
+    
+            if (daddress === '') {
+                isValid = false;
+                daddressErr.textContent = "Address field cannot be empty";
+            }
+    
+            if (phone === '') {
+                isValid = false;
+                phoneErr.textContent = "Phone field cannot be empty";
+            }
+    
+            if (!isValid) {
+                // Prevent form submission if validation fails
+                event.preventDefault();
+            } else {
+                // Prevent form submission while waiting for SweetAlert confirmation
+                event.preventDefault();
+                const swalWithBootstrapButtons = Swal.mixin({
+                    customClass: {
+                        confirmButton: "btn btn-success",
+                        cancelButton: "btn btn-danger"
+                    },
+                    buttonsStyling: false
+                });
+    
+                swalWithBootstrapButtons.fire({
+                    title: "Are you sure?",
+                    text: "You won't be able to revert this!",
+                    icon: "warning",
+                    showCancelButton: true,
+                    confirmButtonText: "Yes, place order!",
+                    cancelButtonText: "No, cancel!",
+                    reverseButtons: true
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        // Submit the form manually after confirmation
+                       
+                        window.location.href = `./dashboard/Controller/placeOrder.php`;
+                       
+                    } else if (result.dismiss === Swal.DismissReason.cancel) {
+                        swalWithBootstrapButtons.fire({
+                            title: "Cancelled",
+                            text: "Your order has been cancelled.",
+                            icon: "error"
+                        });
+                    }
+                });
+            }
+        });
+    }
+    
+    });
+    
+

@@ -157,7 +157,7 @@ $total = $cart->totalAmount();
                           <span class="text-black">Subtotal</span>
                         </div>
                         <div class="col-md-6 text-right">
-                          <strong class="text-black"> <?php echo $total ;?></strong>
+                          <strong class="text-black">Rs  <?php echo $total ;?></strong>
                         </div>
                       </div>
                       <div class="row mb-2">
@@ -165,7 +165,7 @@ $total = $cart->totalAmount();
                           <span class="text-black">Total</span>
                         </div>
                         <div class="col-md-6 text-right">
-                          <strong class="text-black"> <?php echo $total ;?></strong>
+                          <strong class="text-black">Rs  <?php echo $total ;?></strong>
                         </div>
                       </div>
         

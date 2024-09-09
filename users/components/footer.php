@@ -89,6 +89,7 @@
     <script src ="customjs/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="./Formvalidation/validation.js"></script>
+    <script src="users/Formvalidation/validation.js"></script>
    
     <script src="js/cart.js"></script>
 </body>
