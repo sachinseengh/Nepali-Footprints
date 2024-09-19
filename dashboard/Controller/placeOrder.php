@@ -12,10 +12,10 @@ $items = $cart->getCart();
 $total = $cart->totalAmount();
 
 
-$name = $_POST['fullname'];
-$email = $_POST['email'];
-$address = $_POST['daddress'];
-$phone = $_POST['phone'];
+$name = $_GET['fullname'];
+$email = $_GET['email'];
+$address = $_GET['address'];
+$phone = $_GET['phone'];
 $res;
 
 foreach($items as $item){
@@ -24,7 +24,6 @@ $conn = mysqli_connect('localhost','root','','nepalifootprints');
 $order_date= date('y-m-d H:i:s');
 
 $sql = "insert into orders(customer_name,product,quantity,size,price,total,delivery_address,phone,email,order_date) values('$name','".$item['product_name']."','".$item['quantity']."','".$item['size']."','".$item['product_price']."','".$item['total']."','$address','$phone','$email','$order_date')";
-
 
 
 $res = mysqli_query($conn,$sql);

@@ -1,13 +1,25 @@
 <?php
 include ('components/header.php');
+
+
+
+require_once('./Controller/class/user.class.php');
+
+
+$user = new User();
+$users = $user->retrieveAll();
+
+
 ?>
-           
-            <div class="main-content container-fluid">
+
+<div class="main-content container-fluid">
+
     <div class="page-title">
         <div class="row">
             <div class="col-12 col-md-6 order-md-1 order-last">
                 <h3>Customers</h3>
-                <p class="text-subtitle text-muted">We use 'simple-datatables' made by @fiduswriter. You can check the full documentation <a href="https://github.com/fiduswriter/Simple-DataTables/wiki">here</a>.</p>
+                <p class="text-subtitle text-muted">We use 'simple-datatables' made by @fiduswriter. You can check the
+                    full documentation <a href="https://github.com/fiduswriter/Simple-DataTables/wiki">here</a>.</p>
             </div>
             <div class="col-12 col-md-6 order-md-2 order-first">
                 <nav aria-label="breadcrumb" class='breadcrumb-header'>
@@ -37,249 +49,76 @@ include ('components/header.php');
                         </tr>
                     </thead>
                     <tbody>
+                        <?php foreach($users as $user){?>
                         <tr>
-                            <td >1</td>
-                            <td>vehicula.aliquet@semconsequat.co.uk</td>
-                            <td>076 4820 8838</td>
-                            <td>Offenburg</td>
-                            <td>address</td>
+                            <td><?php echo $user['cid'] ?></td>
+                            <td><?php echo $user['name'] ?></td>
+                            <td><?php echo $user['phone'] ?></td>
+                            <td><?php echo $user['email'] ?></td>
+                            <td> <?php echo $user['city'] ?>,<?php echo $user['address'] ?></td>
                             <td class="td-last">
-                            <a class="text-dark my-1 mx-1"><i class='fas fa-trash-alt' style='font-size:1.5rem;color:red'></i></a>
-                            </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Dale</td>
-                            <td>fringilla.euismod.enim@quam.ca</td>
-                            <td>0500 527693</td>
-                            <td>New Quay</td>
-                            <td>
-                                <span class="badge bg-success">Active</span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Nathaniel</td>
-                            <td>mi.Duis@diam.edu</td>
-                            <td>(012165) 76278</td>
-                            <td>Grumo Appula</td>
-                            <td>
-                                <span class="badge bg-danger">Inactive</span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Darius</td>
-                            <td>velit@nec.com</td>
-                            <td>0309 690 7871</td>
-                            <td>Ways</td>
-                            <td>
-                                <span class="badge bg-success">Active</span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Oleg</td>
-                            <td>rhoncus.id@Aliquamauctorvelit.net</td>
-                            <td>0500 441046</td>
-                            <td>Rossignol</td>
-                            <td>
-                                <span class="badge bg-success">Active</span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Kermit</td>
-                            <td>diam.Sed.diam@anteVivamusnon.org</td>
-                            <td>(01653) 27844</td>
-                            <td>Patna</td>
-                            <td>
-                                <span class="badge bg-success">Active</span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Jermaine</td>
-                            <td>sodales@nuncsit.org</td>
-                            <td>0800 528324</td>
-                            <td>Mold</td>
-                            <td>
-                                <span class="badge bg-success">Active</span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Ferdinand</td>
-                            <td>gravida.molestie@tinciduntadipiscing.org</td>
-                            <td>(016977) 4107</td>
-                            <td>Marlborough</td>
-                            <td>
-                                <span class="badge bg-danger">Inactive</span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Kuame</td>
-                            <td>Quisque.purus@mauris.org</td>
-                            <td>(0151) 561 8896</td>
-                            <td>Tresigallo</td>
-                            <td>
-                                <span class="badge bg-success">Active</span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Deacon</td>
-                            <td>Duis.a.mi@sociisnatoquepenatibus.com</td>
-                            <td>07740 599321</td>
-                            <td>Karapınar</td>
-                            <td>
-                                <span class="badge bg-success">Active</span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Channing</td>
-                            <td>tempor.bibendum.Donec@ornarelectusante.ca</td>
-                            <td>0845 46 49</td>
-                            <td>Warrnambool</td>
-                            <td>
-                                <span class="badge bg-success">Active</span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Aladdin</td>
-                            <td>sem.ut@pellentesqueafacilisis.ca</td>
-                            <td>0800 1111</td>
-                            <td>Bothey</td>
-                            <td>
-                                <span class="badge bg-success">Active</span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Cruz</td>
-                            <td>non@quisturpisvitae.ca</td>
-                            <td>07624 944915</td>
-                            <td>Shikarpur</td>
-                            <td>
-                                <span class="badge bg-success">Active</span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Keegan</td>
-                            <td>molestie.dapibus@condimentumDonecat.edu</td>
-                            <td>0800 200103</td>
-                            <td>Assen</td>
-                            <td>
-                                <span class="badge bg-success">Active</span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Ray</td>
-                            <td>placerat.eget@sagittislobortis.edu</td>
-                            <td>(0112) 896 6829</td>
-                            <td>Hofors</td>
-                            <td>
-                                <span class="badge bg-success">Active</span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Maxwell</td>
-                            <td>diam@dapibus.org</td>
-                            <td>0334 836 4028</td>
-                            <td>Thane</td>
-                            <td>
-                                <span class="badge bg-success">Active</span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Carter</td>
-                            <td>urna.justo.faucibus@orci.com</td>
-                            <td>07079 826350</td>
-                            <td>Biez</td>
-                            <td>
-                                <span class="badge bg-success">Active</span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Stone</td>
-                            <td>velit.Aliquam.nisl@sitametrisus.com</td>
-                            <td>0800 1111</td>
-                            <td>Olivar</td>
-                            <td>
-                                <span class="badge bg-success">Active</span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Berk</td>
-                            <td>fringilla.porttitor.vulputate@taciti.edu</td>
-                            <td>(0101) 043 2822</td>
-                            <td>Sanquhar</td>
-                            <td>
-                                <span class="badge bg-success">Active</span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Philip</td>
-                            <td>turpis@euenimEtiam.org</td>
-                            <td>0500 571108</td>
-                            <td>Okara</td>
-                            <td>
-                                <span class="badge bg-success">Active</span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Kibo</td>
-                            <td>feugiat@urnajustofaucibus.co.uk</td>
-                            <td>07624 682306</td>
-                            <td>La Cisterna</td>
-                            <td>
-                                <span class="badge bg-success">Active</span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Bruno</td>
-                            <td>elit.Etiam.laoreet@luctuslobortisClass.edu</td>
-                            <td>07624 869434</td>
-                            <td>Rocca d'Arce</td>
-                            <td>
-                                <span class="badge bg-success">Active</span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Leonard</td>
-                            <td>blandit.enim.consequat@mollislectuspede.net</td>
-                            <td>0800 1111</td>
-                            <td>Lobbes</td>
-                            <td>
-                                <span class="badge bg-success">Active</span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Hamilton</td>
-                            <td>mauris@diam.org</td>
-                            <td>0800 256 8788</td>
-                            <td>Sanzeno</td>
-                            <td>
-                                <span class="badge bg-success">Active</span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Harding</td>
-                            <td>Lorem.ipsum.dolor@etnetuset.com</td>
-                            <td>0800 1111</td>
-                            <td>Obaix</td>
-                            <td>
-                                <span class="badge bg-success">Active</span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Emmanuel</td>
-                            <td>eget.lacus.Mauris@feugiatSednec.org</td>
-                            <td>(016977) 8208</td>
-                            <td>Saint-Remy-Geest</td>
-                            <td>
-                                <span class="badge bg-success">Active</span>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+                                <a class="text-dark my-1 mx-1 delete-button" ><i
+                                        class='fas fa-trash-alt' style='font-size:1.5rem;color:red'></i></a>
             </div>
-        </div>
+            </td>
+            </tr>
+            <?php } ?>
 
-    </section>
+            </tbody>
+            </table>
+        </div>
 </div>
+
+</section>
+</div>
+
+
+
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const deleteButtons = document.querySelectorAll('.delete-button');
+
+    deleteButtons.forEach(button => {
+        button.addEventListener('click', function (event) {
+            event.preventDefault();
+            
+
+            const swalWithBootstrapButtons = Swal.mixin({
+                customClass: {
+                    confirmButton: 'btn btn-danger swal-confirm-btn',
+                    cancelButton: 'btn btn-secondary swal-cancel-btn'
+                },
+                buttonsStyling: false
+            });
+
+            swalWithBootstrapButtons.fire({
+                title: 'Are you sure?',
+                text: "You won't be able to revert this!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonText: 'Yes, delete it!',
+                cancelButtonText: 'No, cancel!',
+                reverseButtons: true
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    // If confirmed, proceed with deletion
+                    window.location.href = `./Controller/deleteCustomer.php`;
+                } else if (result.dismiss === Swal.DismissReason.cancel) {
+                    swalWithBootstrapButtons.fire(
+                        'Cancelled',
+                        'Your Customer is safe :)',
+                        'error'
+                    );
+                }
+            });
+        });
+    });
+});
+</script>
+
+
 <?php
 include ('components/footer.php');
 

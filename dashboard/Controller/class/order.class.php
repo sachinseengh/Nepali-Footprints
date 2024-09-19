@@ -30,6 +30,27 @@ class Order {
     }
 
 
+    public function retrieveOne(){
+
+        $conn =mysqli_connect('localhost','root','','nepalifootprints');
+        $sql = "select * from orders where email ='sachinseengh@gmail.com' ";
+
+
+        $res = mysqli_query($conn,$sql);
+
+        if($res){
+            $datalist =$res->fetch_all(MYSQLI_ASSOC);
+            return $datalist;
+        }else{
+            return false;
+        }
+
+
+
+
+    }
+
+
 }
 
 

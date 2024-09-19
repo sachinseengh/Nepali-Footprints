@@ -11,6 +11,8 @@
             </footer>
         </div>
     </div>
+  
+  
     <script src="assets/js/feather-icons/feather.min.js"></script>
     <script src="assets/vendors/perfect-scrollbar/perfect-scrollbar.min.js"></script>
              <script src="assets/vendors/chartjs/Chart.min.js"></script>
@@ -27,7 +29,7 @@
 
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-<script src =></script>
+>
 
   
 </body>

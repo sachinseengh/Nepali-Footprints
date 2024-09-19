@@ -154,9 +154,17 @@ document.addEventListener('DOMContentLoaded', function() {
                     reverseButtons: true
                 }).then((result) => {
                     if (result.isConfirmed) {
+
+
+                        const nameVal = document.getElementById('fname').value;
+                        const emailVal = document.getElementById('email').value;
+                        const daddressVal = document.getElementById('daddress').value;
+                        const phoneVal = document.getElementById('phone').value;
+
                         // Submit the form manually after confirmation
                        
-                        window.location.href = `./dashboard/Controller/placeOrder.php`;
+                        window.location.href = `./dashboard/Controller/placeOrder.php?fullname=${nameVal} & email=${email} & address=${daddressVal} & phone=${phoneVal}`;
+                        
                        
                     } else if (result.dismiss === Swal.DismissReason.cancel) {
                         swalWithBootstrapButtons.fire({

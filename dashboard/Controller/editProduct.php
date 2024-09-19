@@ -5,8 +5,7 @@ require_once('./class/Product.class.php');
 $product = new Product();
 
 // Set product details
-
-$product->set('pid',$_POST['pid']);
+$product->set('pid', $_POST['pid']);
 $product->set('name', $_POST['name']);
 $product->set('price', $_POST['price']);
 $product->set('desc', $_POST['desc']);
@@ -14,7 +13,7 @@ $product->set('category', $_POST['category']);
 $product->set('sub_category', $_POST['sub_category']);
 
 // Function to handle file uploads
-function handleFileUpload($file, $fieldName, $product) {
+function handleFileUpload($file, $fieldName, $product, $existingImage = null) {
     if ($file['error'] == 0) {
         // Define the allowed file types
         $allowedTypes = ['image/png', 'image/jpg', 'image/jpeg', 'image/webp'];
@@ -45,7 +44,10 @@ function handleFileUpload($file, $fieldName, $product) {
             return "Invalid file type!";
         }
     } else {
-        return null;
+        // If no file was uploaded, use the existing image
+        if ($existingImage) {
+            $product->set($fieldName, $existingImage);
+        }
     }
 
     return null; // No error
@@ -53,10 +55,10 @@ function handleFileUpload($file, $fieldName, $product) {
 
 // Handle file uploads
 $imageErrors = [];
-$imageErrors[] = handleFileUpload($_FILES['featured_img'], 'featured_img', $product);
-$imageErrors[] = handleFileUpload($_FILES['add_img1'], 'add_img1', $product);
-$imageErrors[] = handleFileUpload($_FILES['add_img2'], 'add_img2', $product);
-$imageErrors[] = handleFileUpload($_FILES['add_img3'], 'add_img3', $product);
+$imageErrors[] = handleFileUpload($_FILES['featured_img'], 'featured_img', $product, $_POST['existing_img']);
+$imageErrors[] = handleFileUpload($_FILES['add_img1'], 'add_img1', $product, $_POST['existing_add_img1']);
+$imageErrors[] = handleFileUpload($_FILES['add_img2'], 'add_img2', $product, $_POST['existing_add_img2']);
+$imageErrors[] = handleFileUpload($_FILES['add_img3'], 'add_img3', $product, $_POST['existing_add_img3']);
 
 // Set product sizes
 $sizes = ['s_30', 's_31', 's_32', 's_33', 's_34', 's_35', 's_36', 's_37', 's_38', 's_39', 's_40', 's_41', 's_42', 's_43', 's_44', 's_45'];

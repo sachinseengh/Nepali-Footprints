@@ -11,7 +11,7 @@ $orders= $Order->retrieve();
 
 
 ?>
-            <div class="main-content container-fluid">
+<div class="main-content container-fluid">
     <div class="page-title">
         <div class="row">
             <div class="col-12 col-md-6 order-md-1 order-last">
@@ -38,6 +38,8 @@ $orders= $Order->retrieve();
                     <thead>
                         <tr>
                             <th>Id</th>
+                            <th>Status</th>
+                            <th>order Date</th>
                             <th>OrderBy</th>
                             <th>Product</th>
                             <th>Quantity</th>
@@ -46,42 +48,46 @@ $orders= $Order->retrieve();
                             <th>Total Amount</th>
                             <th>Phone</th>
                             <th>email</th>
-                        <th>Delivery Address</th>
-                        <th>Status</th>
-                        <th>Edit</th>
-                        <th>order Date</th>
+                            <th>Delivery Address</th>
+
+                            <th>Edit</th>
+
                         </tr>
                     </thead>
                     <tbody>
 
-                    <?php foreach($orders as $order) { ?>
+                        <?php foreach($orders as $order) { ?>
                         <tr>
                             <td><?php echo $order['oid'];?></td>
+                            <td>
+                            <p class="badge bg-primary"><?php echo $order['status'] ?></p></td>
+                            
+                            
+                            <td><?php echo $order['order_date'];?></td>
                             <td><?php echo $order['customer_name'];?></td>
                             <td><?php echo $order['product'];?></td>
-                            
+
                             <td><?php echo $order['quantity'];?></td>
                             <td><?php echo $order['size'];?></td>
                             <td>NPR <?php echo $order['price'];?></td>
                             <td>NPR <?php echo $order['total'];?></td>
                             <td><?php echo $order['phone'];?></td>
                             <td><?php echo $order['email'];?></td>
-                           <td><?php echo $order['delivery_address'];?></td>
-                            <td>
-                            <span class="badge bg-primary">Shipped</span></td>
-                            <td>
+                            <td><?php echo $order['delivery_address'];?></td>
 
+
+                            <td>
                             <div class="container">
-                                            <a class="text-dark my-1 mx-1 "><i class='fas fa-pencil-alt' style='font-size:1.5rem'></i></a>
-                                            
-                                            </div>
+                                <a class="text-dark my-1 mx-1 "><i class='fas fa-pencil-alt'
+                                        style='font-size:1.5rem'></i></a>
+                            </div>
                             </td>
 
-                            <td><?php echo $order['order_date'];?></td>
+
                         </tr>
                         <?php } ?>
-                      
-                       
+
+
                     </tbody>
                 </table>
             </div>
@@ -90,7 +96,7 @@ $orders= $Order->retrieve();
     </section>
 </div>
 
-      <?php
+<?php
 
 
 include ('components/footer.php');

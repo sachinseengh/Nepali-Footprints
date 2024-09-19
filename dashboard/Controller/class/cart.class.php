@@ -118,7 +118,7 @@ public function increaseByOne(){
 public function decreaseByOne(){
     $conn = mysqli_connect('localhost','root','','nepalifootprints');
 
-    $sql = "Update cart set quantity = quantity - 1 where cart_id = '$this->cart_id'" ;
+    $sql = "Update cart set quantity = quantity - 1 where quantity>1 and cart_id = '$this->cart_id'" ;
 
     $res = mysqli_query($conn,$sql);
 

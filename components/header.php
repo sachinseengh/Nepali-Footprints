@@ -42,12 +42,12 @@
 
         <div class="collapse navbar-collapse" id="navbarsFurni">
             <ul class="custom-navbar-nav navbar-nav ms-auto mx-2 mb-2 mb-md-0">
-                <form class="d-flex">
-                    <input class="form-control me-2 form-control-transparent" type="search" placeholder="Search"
-                        aria-label="Search">
-                    <button type="submit" class="btn btn-custom">
-                        <i class="fa-solid fa-magnifying-glass"></i>
-                    </button>
+                <form id="searchForm" action='./searchpage.php' method="get" class="d-flex">
+                    <input class="form-control me-2 form-control-transparent" id="searchInput" type="search" name="query"  placeholder="Search"
+                        aria-label="Search" >
+                  
+                      <Button type="submit" class="btn btn-custom mt-2">  <i class="fa-solid fa-magnifying-glass"></i> </Button>
+                   
                 </form>
             </ul>
 

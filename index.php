@@ -403,6 +403,7 @@ $items= $product->getProductsMen();
 
     <!-- Start Footer Section -->
 	</div>
+ 
 <?php
 
 include 'components/footer.php';

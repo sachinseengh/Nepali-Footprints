@@ -21,7 +21,7 @@ $total = $cart->totalAmount();
 		          <h2 class="h3 mb-3 text-black">Billing Details</h2>
 		          <div class="p-3 p-lg-5 border bg-white">
 		            
-				  <form id="orderForm" action="dashboard/Controller/placeOrder.php" method="post" >
+				  <form id="orderForm" action="dashboard/Controller/placeOrder.php" method="get" >
 
 				  
 		            <div class="form-group row">

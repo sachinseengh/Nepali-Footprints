@@ -37,6 +37,19 @@ class User extends common {
             return false;
         }
     }
+    public function retrieveAll()
+    {
+        $conn = mysqli_connect('localhost', 'root', '', 'nepalifootprints');
+     
+        $sql = "select * from customer ";
+        $var = mysqli_query($conn,$sql);
+        if ($var->num_rows > 0) {
+            $datalist = $var->fetch_all(MYSQLI_ASSOC);
+            return $datalist;
+        } else {
+            return false;
+        }
+    }
 
     public function login(){
         $conn  = new mysqli("localhost","root","","nepalifootprints");
@@ -57,9 +70,9 @@ class User extends common {
         $conn  = new mysqli("localhost","root","","nepalifootprints");
 
         
-        $sql ="update customer set password ='$this->password',name ='$this->name',address ='$this->address',city='$this->city' where email='$this->email'";
+        $sql ="update customer set password ='$this->password',phone='$this->phone',address ='$this->address',city='$this->city' where email='$this->email'";
 
-        echo $sql;
+    
         $res = mysqli_query($conn,$sql);
 
         if($res){
@@ -86,6 +99,24 @@ class User extends common {
             exit();
         }else{
             header('Location: /NepaliFootprints/users/profile.php?Msg=' . urlencode("Failed to delete account"));
+            exit();
+        }
+
+    }
+    public function deleteCustomer(){
+        $conn  = new mysqli("localhost","root","","nepalifootprints");
+
+        
+        $sql ="delete from customer where email='$this->email'";
+    
+        $res = mysqli_query($conn,$sql);
+
+
+        if($res){
+            header('Location: /NepaliFootprints/dashboard/manage-customer.php?Msg=' . urlencode("Account deleted"));
+            exit();
+        }else{
+            header('Location: /NepaliFootprints/dashboard/manage-customer.php?Msg=' . urlencode("Failed to delete account"));
             exit();
         }
 

@@ -85,6 +85,34 @@
     <!-- End Footer Section -->
 
 
+    <script>
+    function SubmitForm(){
+
+        const query = document.getElementById("searchInput").value;
+        if(query.trim().length>0){
+            document.getElementById("searchForm").submit();
+        }
+    }
+</script>
+
+    <script>
+    const fileInput = document.getElementById('fileInput1');
+    const previewImg = document.getElementById('preview1');
+
+    fileInput.addEventListener('change', function(event) {
+        const file = event.target.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                previewImg.src = e.target.result; // Show selected image preview
+            };
+            reader.readAsDataURL(file);
+        } else {
+            previewImg.src = './images/<?php echo $item->featured_img; ?>'; // Revert to old image
+        }
+    });
+</script>
+
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/tiny-slider.js"></script>
     <script src="js/custom.js"></script>

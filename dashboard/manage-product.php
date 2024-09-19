@@ -120,11 +120,11 @@ echo "30 ->".$sizes[0].", 31->".$sizes[1].", 32->".$sizes[2].", 33->".$sizes[4].
     </section>
 </div>
 <script>
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', function() {
     const deleteButtons = document.querySelectorAll('.delete-button');
 
     deleteButtons.forEach(button => {
-        button.addEventListener('click', function (event) {
+        button.addEventListener('click', function(event) {
             event.preventDefault();
             const productId = this.getAttribute('data-id');
 

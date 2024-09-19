@@ -1,4 +1,15 @@
-<?php include('components/header.php'); ?>
+<?php include('components/header.php'); 
+
+require_once ('../dashboard/Controller/class/order.class.php');
+
+$order = new Order();
+
+$orders = $order->retrieveOne();
+
+
+
+
+?>
 
 <!-- Alert -->
 <?php if(isset($_GET['alert'])): ?>
@@ -19,15 +30,53 @@
                             <img src="../images/person-1.png" alt="Maria Jones" class="img-fluid "
                                 style="border-radius:200px; height:7rem">
                         </div>
-                        <h3 class="font-weight-bold text-dark" >Maria Jones</h3>
-                        <span class="position d-block mb-3  text-dark">CEO, Co-Founder, XYZ Inc.</span>
+                       
                     </div>
+                    <div class="d-flex justify-content-between flex-row">
+                    <div>
+                    <h3 class="font-weight-bold text-dark" >Maria Jones</h3>
+                    <span class="position d-block mb-3  text-dark">CEO, Co-Founder, XYZ Inc.</span>
 
-
-                    <div class="col-12">
+                    </div>
+                    <div >
                     <a href="edit.php" class="btn btn-primary">Edit</a>
                         <a  class="btn btn-danger delete-button">Delete</a>
                     </div>
+                    </div>
+                    
+                    <div class="my-3">
+                        <h2 class=" btn  btn-secondary">Your Orders</h2>
+
+                        <div class="card-body">
+                <table class='table table-striped' id="table1">
+                    <thead>
+                        <tr>
+                            
+                            <th>Product</th>
+                            <th>Quantity</th>
+                            <th>Price</th>
+                            <th>Total</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php foreach($orders as $order){?>
+                        <tr>
+                            <td><?php echo $order['product'] ?></td>
+                            <td><?php echo $order['quantity'] ?></td>
+                            <td>Rs <?php echo $order['price'] ?></td>
+                            <td>Rs <?php echo $order['total'] ?></td>
+                            <td >  <p class="badge bg-success"> <?php echo $order['status'] ?></p></td>
+                            
+            </div>
+            </td>
+            </tr>
+            <?php } ?>
+
+            </tbody>
+            </table>
+        </div>
+                 </div>
 
                 </div>
             </div>

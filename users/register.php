@@ -26,7 +26,10 @@ include('components/header.php');
                         </div>
                         <div class="col-12">
                             <label for="name" class="form-label">Name</label>
+                            
+                         
                             <input type="text" class="form-control" id="name"  name="name">
+                            <div> <span style="color:red;font-size:10px"> Name cannot be edited later</span></div>
                             <span id="nameErr" style="color:red;"></span>
                         </div>
                         <div class="col-md-6">
@@ -46,8 +49,8 @@ include('components/header.php');
                         </div>
                        
                         <div class="col-12">
-                            <button type="submit" class="btn btn-primary" name="submit">Register</button>
                             <a href="login.php" class="btn btn-secondary">Login</a>
+                            <button type="submit" class="btn btn-primary" name="submit">Register</button>
                         </div>
                     </form>
                 </div>

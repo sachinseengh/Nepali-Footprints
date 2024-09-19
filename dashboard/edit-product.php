@@ -13,7 +13,7 @@ $item = $product->getById();
         <div class="row">
             <div class="col-12 col-md-6 order-md-1 order-last">
                 <h3>Edit Products</h3>
-                
+
 
 
             </div>
@@ -40,7 +40,7 @@ $item = $product->getById();
                         <div class="col-md-12 my-1">
                             <div class="form-group">
                                 <label for="basicInput">Id</label>
-                                <input type="text" class="form-control" id="basicInput" name="pid" 
+                                <input type="text" class="form-control" id="basicInput" name="pid"
                                     value=<?php echo $_GET['id'] ?> readonly>
                             </div>
                         </div> <!-- Name of product -->
@@ -90,8 +90,10 @@ $item = $product->getById();
                                         <fieldset class="form-group mb-0">
                                             <select class="form-select" id="basicSelect" name="category">
 
-                                            <option <?php if($item->sub_category == "Men")echo "Selected";?>>Men</option>
-                                            <option <?php if($item->sub_category == "Women")echo "Selected";?>>Women</option>
+                                                <option <?php if($item->sub_category == "Men")echo "Selected";?>>Men
+                                                </option>
+                                                <option <?php if($item->sub_category == "Women")echo "Selected";?>>Women
+                                                </option>
 
                                             </select>
                                         </fieldset>
@@ -110,14 +112,18 @@ $item = $product->getById();
                                             <select class="form-select" id="basicSelect" name="sub_category">
 
 
-                                                <option <?php if($item->sub_category == "Sports")echo "Selected";?>>Sports</option>
-                                                    <option <?php if($item->sub_category == "Casuals")echo "Selected";?>>Casuals</option>
-                                                    <option <?php if($item->sub_category == "Boot")echo "Selected";?>>Boot</option>
-                                                    <option <?php if($item->sub_category == "Formal")echo "Selected";?>>Formal</option>
-                                                
+                                                <option <?php if($item->sub_category == "Sports")echo "Selected";?>>
+                                                    Sports</option>
+                                                <option <?php if($item->sub_category == "Casuals")echo "Selected";?>>
+                                                    Casuals</option>
+                                                <option <?php if($item->sub_category == "Boot")echo "Selected";?>>Boot
+                                                </option>
+                                                <option <?php if($item->sub_category == "Formal")echo "Selected";?>>
+                                                    Formal</option>
 
 
-                                                
+
+
 
                                             </select>
                                         </fieldset>
@@ -127,69 +133,96 @@ $item = $product->getById();
                         </div>
                     </div>
                     <h6 class="mb-0">Images</h6>
-            <div>
-              <div class="d-flex row ">
-                <div class="col-12">
-                  <div>
-                    <label class="col-form-label p-1">Featured Image:</label>
-                  </div>
-                  <div>
-                    <div class="form-file">
-                      <input type="file" class="form-file-input" id="fileInput1" name="featured_img" accept="image/*">
+                    <div>
+                        <div class="d-flex row ">
+                            <div class="col-12">
+                                <div>
+                                    <label class="col-form-label p-1">Featured Image:</label>
+                                </div>
+                                <div>
+                                    <!-- <div class="form-file">
+                      <input type="file" class="form-file-input" id="fileInput1" name="featured_img" accept="image/*" >
                       <img id="preview1" class="preview" src="./images/<?php echo $item->featured_img; ?>" alt="Featured Image Preview" height="70" width="70" style="padding-top:0.5rem;">
+                    
                      
+                    </div> -->
+                                    <div class="form-file">
+                                        <input type="file" class="form-file-input" id="fileInput1" name="featured_img"
+                                            accept="image/*">
+                                        <img id="preview1" class="preview"
+                                            src="./images/<?php echo $item->featured_img; ?>"
+                                            alt="Featured Image Preview" height="70" width="70"
+                                            style="padding-top:0.5rem;">
+                                        <input type="hidden" name="existing_img"
+                                            value="<?php echo $item->featured_img; ?>">
+                                    </div>
 
-                     
-                    </div>
-                  </div>
-                </div>
-              </div>
 
-              <div class="col-12">
-                <div class="form-group align-items-center">
-                  <div class="col-lg-3 col-3">
-                    <label class="col-form-label">Additional Image 1:</label>
-                  </div>
-                  <div class="col-lg-9 col-9">
-                    <div class="form-file">
-                      <input type="file" class="form-file-input" id="fileInput2" name="add_img1" accept="image/*">
-                      <img id="preview1" class="preview" src="./images/<?php echo $item->add_img1; ?>" alt="Featured Image Preview" height="70" width="70" style="padding-top:0.5rem;">
-                     
-                    </div>
-                  </div>
-                </div>
-              </div>
 
-              <div class="col-12">
-                <div class="form-group align-items-center">
-                  <div class="col-lg-3 col-3">
-                    <label class="col-form-label">Additional Image 2:</label>
-                  </div>
-                  <div class="col-lg-9 col-9">
-                    <div class="form-file">
-                      <input type="file" class="form-file-input" id="fileInput3" name="add_img2" accept="image/*">
-                      <img id="preview1" class="preview" src="./images/<?php echo $item->add_img2; ?>" alt="Featured Image Preview" height="70" width="70" style="padding-top:0.5rem;">
-                     
-                    </div>
-                  </div>
-                </div>
-              </div>
+                                </div>
+                            </div>
+                        </div>
 
-              <div class="col-12">
-                <div class="form-group align-items-center">
-                  <div class="col-lg-3 col-3">
-                    <label class="col-form-label">Additional Image 3:</label>
-                  </div>
-                  <div class="col-lg-9 col-9">
-                    <div class="form-file">
-                      <input type="file" class="form-file-input" id="fileInput4" name="add_img3" accept="image/*">
-                      <img id="preview1" class="preview" src="./images/<?php echo $item->add_img3; ?>" alt="Featured Image Preview" height="70" width="70" style="padding-top:0.5rem;">
-                     
+                        <!-- Additional Image 1 -->
+                        <div class="col-12">
+                            <div class="form-group align-items-center">
+                                <div class="col-lg-3 col-3">
+                                    <label class="col-form-label">Additional Image 1:</label>
+                                </div>
+                                <div class="col-lg-9 col-9">
+                                    <div class="form-file">
+                                        <input type="file" class="form-file-input" id="fileInput2" name="add_img1"
+                                            accept="image/*">
+                                        <img id="preview1" class="preview" src="./images/<?php echo $item->add_img1; ?>"
+                                            alt="Additional Image 1 Preview" height="70" width="70"
+                                            style="padding-top:0.5rem;">
+                                        <input type="hidden" name="existing_add_img1"
+                                            value="<?php echo $item->add_img1; ?>">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Additional Image 2 -->
+                        <div class="col-12">
+                            <div class="form-group align-items-center">
+                                <div class="col-lg-3 col-3">
+                                    <label class="col-form-label">Additional Image 2:</label>
+                                </div>
+                                <div class="col-lg-9 col-9">
+                                    <div class="form-file">
+                                        <input type="file" class="form-file-input" id="fileInput3" name="add_img2"
+                                            accept="image/*">
+                                        <img id="preview2" class="preview" src="./images/<?php echo $item->add_img2; ?>"
+                                            alt="Additional Image 2 Preview" height="70" width="70"
+                                            style="padding-top:0.5rem;">
+                                        <input type="hidden" name="existing_add_img2"
+                                            value="<?php echo $item->add_img2; ?>">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Additional Image 3 -->
+                        <div class="col-12">
+                            <div class="form-group align-items-center">
+                                <div class="col-lg-3 col-3">
+                                    <label class="col-form-label">Additional Image 3:</label>
+                                </div>
+                                <div class="col-lg-9 col-9">
+                                    <div class="form-file">
+                                        <input type="file" class="form-file-input" id="fileInput4" name="add_img3"
+                                            accept="image/*">
+                                        <img id="preview3" class="preview" src="./images/<?php echo $item->add_img3; ?>"
+                                            alt="Additional Image 3 Preview" height="70" width="70"
+                                            style="padding-top:0.5rem;">
+                                        <input type="hidden" name="existing_add_img3"
+                                            value="<?php echo $item->add_img3; ?>">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                  </div>
-                </div>
-              </div>
-            </div>
 
 
                     <h6 class="my-3">Size and Quantity</h6>
@@ -200,7 +233,8 @@ $item = $product->getById();
                                     style="font-family:times new roman;font-size:1.5rem">30</label>
                             </div>
                             <div class="mx-2 my-2">
-                                <input type="number" id="last-name" class="form-control" name="s_30" value=<?php echo $item->s_30 ?>>
+                                <input type="number" id="last-name" class="form-control" name="s_30"
+                                    value=<?php echo $item->s_30 ?>>
                             </div>
                         </div>
                         <div class="col-6 col-md-3 col-sm-4 d-flex  ">
@@ -209,7 +243,8 @@ $item = $product->getById();
                                     style="font-family:times new roman;font-size:1.5rem">31</label>
                             </div>
                             <div class="mx-2 my-2">
-                                <input type="number" id="last-name" class="form-control" name="s_31"value=<?php echo $item->s_31 ?>>
+                                <input type="number" id="last-name" class="form-control" name="s_31"
+                                    value=<?php echo $item->s_31 ?>>
                             </div>
                         </div>
                         <div class="col-6 col-md-3 col-sm-4 d-flex  ">
@@ -218,7 +253,8 @@ $item = $product->getById();
                                     style="font-family:times new roman;font-size:1.5rem">32</label>
                             </div>
                             <div class="mx-2 my-2">
-                                <input type="number" id="last-name" class="form-control" name="s_32"  value=<?php echo $item->s_32 ?>>
+                                <input type="number" id="last-name" class="form-control" name="s_32"
+                                    value=<?php echo $item->s_32 ?>>
                             </div>
                         </div>
                         <div class="col-6 col-md-3 col-sm-4 d-flex  ">
@@ -227,7 +263,8 @@ $item = $product->getById();
                                     style="font-family:times new roman;font-size:1.5rem">33</label>
                             </div>
                             <div class="mx-2 my-2">
-                                <input type="number" id="last-name" class="form-control" name="s_33" value=<?php echo $item->s_33 ?>>
+                                <input type="number" id="last-name" class="form-control" name="s_33"
+                                    value=<?php echo $item->s_33 ?>>
                             </div>
                         </div>
                         <div class="col-6 col-md-3 col-sm-4 d-flex  ">
@@ -236,7 +273,8 @@ $item = $product->getById();
                                     style="font-family:times new roman;font-size:1.5rem">34</label>
                             </div>
                             <div class="mx-2 my-2">
-                                <input type="number" id="last-name" class="form-control" name="s_34" value=<?php echo $item->s_34 ?>>
+                                <input type="number" id="last-name" class="form-control" name="s_34"
+                                    value=<?php echo $item->s_34 ?>>
                             </div>
                         </div>
                         <div class="col-6 col-md-3 col-sm-4 d-flex  ">
@@ -245,7 +283,8 @@ $item = $product->getById();
                                     style="font-family:times new roman;font-size:1.5rem">35</label>
                             </div>
                             <div class="mx-2 my-2">
-                                <input type="number" id="last-name" class="form-control" name="s_35" value=<?php echo $item->s_35 ?>>
+                                <input type="number" id="last-name" class="form-control" name="s_35"
+                                    value=<?php echo $item->s_35 ?>>
                             </div>
                         </div>
                         <div class="col-6 col-md-3 col-sm-4  d-flex  ">
@@ -255,7 +294,7 @@ $item = $product->getById();
                             </div>
                             <div class="mx-2 my-2">
                                 <input type="number" id="last-name" class="form-control" name="s_36"
-                                value=<?php echo $item->s_36 ?>>
+                                    value=<?php echo $item->s_36 ?>>
                             </div>
                         </div>
                         <div class="col-6 col-md-3 col-sm-4  d-flex  ">
@@ -264,7 +303,8 @@ $item = $product->getById();
                                     style="font-family:times new roman;font-size:1.5rem">37</label>
                             </div>
                             <div class="mx-2 my-2">
-                                <input type="number" id="last-name" class="form-control" name="s_37" value=<?php echo $item->s_37 ?>>
+                                <input type="number" id="last-name" class="form-control" name="s_37"
+                                    value=<?php echo $item->s_37 ?>>
                             </div>
                         </div>
                         <div class="col-6 col-md-3 col-sm-4  d-flex  ">
@@ -274,7 +314,7 @@ $item = $product->getById();
                             </div>
                             <div class="mx-2 my-2">
                                 <input type="number" id="last-name" class="form-control" name="s_38"
-                                value=<?php echo $item->s_38 ?>>
+                                    value=<?php echo $item->s_38 ?>>
                             </div>
                         </div>
                         <div class="col-6 col-md-3 col-sm-4  d-flex  ">
@@ -284,7 +324,7 @@ $item = $product->getById();
                             </div>
                             <div class="mx-2 my-2">
                                 <input type="number" id="last-name" class="form-control" name="s_39"
-                                value=<?php echo $item->s_39 ?>>
+                                    value=<?php echo $item->s_39 ?>>
                             </div>
                         </div>
                         <div class="col-6 col-md-3 col-sm-4  d-flex  ">
@@ -294,7 +334,7 @@ $item = $product->getById();
                             </div>
                             <div class="mx-2 my-2">
                                 <input type="number" id="last-name" class="form-control" name="s_40"
-                                value=<?php echo $item->s_40 ?>>
+                                    value=<?php echo $item->s_40 ?>>
                             </div>
                         </div>
                         <div class="col-6 col-md-3 col-sm-4  d-flex  ">
@@ -304,7 +344,7 @@ $item = $product->getById();
                             </div>
                             <div class="mx-2 my-2">
                                 <input type="number" id="last-name" class="form-control" name="s_41"
-                                value=<?php echo $item->s_41 ?>>
+                                    value=<?php echo $item->s_41 ?>>
                             </div>
                         </div>
                         <div class="col-6 col-md-3 col-sm-4  d-flex  ">
@@ -314,7 +354,7 @@ $item = $product->getById();
                             </div>
                             <div class="mx-2 my-2">
                                 <input type="number" id="last-name" class="form-control" name="s_42"
-                                value=<?php echo $item->s_42 ?>>
+                                    value=<?php echo $item->s_42 ?>>
                             </div>
                         </div>
                         <div class="col-6 col-md-3 col-sm-4  d-flex  ">
@@ -324,7 +364,7 @@ $item = $product->getById();
                             </div>
                             <div class="mx-2 my-2">
                                 <input type="number" id="last-name" class="form-control" name="s_43"
-                                value=<?php echo $item->s_43 ?>>
+                                    value=<?php echo $item->s_43 ?>>
                             </div>
                         </div>
                         <div class="col-6 col-md-3 col-sm-4  d-flex  ">
@@ -334,7 +374,7 @@ $item = $product->getById();
                             </div>
                             <div class="mx-2 my-2">
                                 <input type="number" id="last-name" class="form-control" name="s_44"
-                                value=<?php echo $item->s_44 ?>>
+                                    value=<?php echo $item->s_44 ?>>
                             </div>
                         </div>
                         <div class="col-6 col-md-3 col-sm-4  d-flex  ">
@@ -344,7 +384,7 @@ $item = $product->getById();
                             </div>
                             <div class="mx-2 my-2">
                                 <input type="number" id="last-name" class="form-control" name="s_45"
-                                value=<?php echo $item->s_45 ?>>
+                                    value=<?php echo $item->s_45 ?>>
                             </div>
                         </div>
                     </div>
@@ -388,6 +428,8 @@ $item = $product->getById();
       });
     });
   </script>
+
 <?php
+
 include('components/footer.php');
 ?>
