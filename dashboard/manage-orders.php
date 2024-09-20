@@ -60,7 +60,18 @@ $orders= $Order->retrieve();
                         <tr>
                             <td><?php echo $order['oid'];?></td>
                             <td>
-                            <p class="badge bg-primary"><?php echo $order['status'] ?></p></td>
+                            <a class="text-dark  mx-1 " href="./editOrderStatus.php?id=<?php echo $order['oid']; ?>"><p class="badge bg-<?php if( $order['status']=="Active"){
+                                        echo "primary";
+                            }elseif($order['status']=="Confirmed"){
+                                echo "secondary";
+                            }elseif($order['status']=="Shipped"){
+                                echo "warning";
+                            }elseif($order['status']=="Delivered"){
+                                echo "success";
+                        }else{
+                            echo "danger";
+                        }?>"><?php echo $order['status'] ?>   </p><i class='fas fa-pencil-alt '
+                            style='font-size:1rem'></i></a></td>
                             
                             
                             <td><?php echo $order['order_date'];?></td>
@@ -78,8 +89,8 @@ $orders= $Order->retrieve();
 
                             <td>
                             <div class="container">
-                                <a class="text-dark my-1 mx-1 "><i class='fas fa-pencil-alt'
-                                        style='font-size:1.5rem'></i></a>
+                                <a class="text-dark my-1 mx-1 " href="#"><i class='fas fa-trash-alt '
+                                        style='font-size:1.5rem;color:red;'></i></a>
                             </div>
                             </td>
 

@@ -97,6 +97,21 @@ public function getCart(){
         }
 }
 
+public function getCartById(){
+    $conn = mysqli_connect('localhost','root','','nepalifootprints');
+
+    $sql = "Select * from cart where pid=$this->pid";
+
+    $res = mysqli_query($conn,$sql);
+
+    if(mysqli_num_rows($res)>0){
+        header('Location: /NepaliFootprints/cart.php?Msg=' . urlencode("Product Already in Cart"));
+
+        exit();
+    }
+    }
+
+
 public function increaseByOne(){
     $conn = mysqli_connect('localhost','root','','nepalifootprints');
 
