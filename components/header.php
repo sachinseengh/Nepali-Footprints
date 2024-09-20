@@ -18,9 +18,39 @@
     <link href="./css/style.css" rel="stylesheet">
     <link href="./css/additional.css" rel="stylesheet">
     <link rel="stylesheet" href="css/product_detail.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <title>Nepali Footprints </title>
+  <!-- Script to dynamically update stock based on size -->
+  <script>
+  $(document).ready(function(){
+    $("#size").change(function(){
+      var selectedSize = $(this).val();  // Get the selected size value
+      var productId = "<?php echo $_GET['id']; ?>";  // Get the product ID from PHP
+
+      if(selectedSize != "Select Size"){
+        $.ajax({
+          url: "./stockAjax/stock.php",  // PHP file to handle the request
+          method: "GET",
+          data: { size: selectedSize, id: productId },  // Send size and product ID
+          success: function(response){
+            $("#stock").html(response);  // Show stock data in the #stock element
+          },
+          error: function() {
+            $("#stock").html("<span class='text-danger'>Error fetching stock data</span>");
+          }
+        });
+      } else {
+        $("#stock").html("");  // Clear stock information if no size is selected
+      }
+    });
+  });
+</script>
+
+
+
+
   
 </head>
 

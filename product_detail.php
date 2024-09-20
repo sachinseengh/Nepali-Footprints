@@ -40,14 +40,14 @@ $item = $product->getById();
                 <?php echo htmlspecialchars_decode($item->description); ?>
 
                 </ul>
-                <form action="dashboard/Controller/addCart.php" method="GET">
+                <form id="sizeForm" action="dashboard/Controller/addCart.php" method="GET">
 
                 <input type="hidden" name="id" value="<?php echo $_GET['id']; ?>">
                 
                 <input type="hidden" name="price" value="<?php echo $item->price; ?>">
                 <div class="sizes my-3">
                     <p>Size:</p>
-                    <select name="Size" id="size" class="form-select">
+                    <select name="Size" id="size" class="form-select" required onChange="removeErr()">
                     <option selected value="Select Size">Select Size</option>
                         <option value="30">30</option>
                         <option value="31">31</option>
@@ -68,8 +68,9 @@ $item = $product->getById();
                         <option value="45">45</option>
                         
                     </select>
+                    <span id="sizeErr" class="text-danger"></span>
                 </div>
-                  <h6 class="text-success">67 in stock</h6>
+                  <h6 id="stock" class="text-success" ></h6>
                 <div class="quantity my-3">
                     <input type="number" value="1" min="1" class="form-control w-25 d-inline-block" name="quantity">
                     <button type="submit" class="btn btn-primary ms-2">Add To Cart</button>
@@ -105,6 +106,40 @@ $item = $product->getById();
 </div>
 
 <!-- script tags -->
+ <script>
+
+
+    const sizeForm = document.addEventListener('submit',function(e){
+        const size  = document.getElementById("size").value;
+        
+        
+        const sizeErr = document.getElementById("sizeErr");
+        
+        const stock  = document.getElementById("stock");
+        const stockValue = stock.textContent;
+        console.log(stockValue);
+       
+        
+        
+
+        if(size === "Select Size"){
+            e.preventDefault();
+            sizeErr.textContent ="Please Select Size";
+        }
+        
+        if( stockValue === "Out of Stock"){
+            e.preventDefault();
+        }
+        
+       
+       
+    })
+    function removeErr(){
+        const sizeErr = document.getElementById("sizeErr");
+        sizeErr.textContent="";
+    }
+
+ </script>
 <script src="js/product_detail.js"></script>
 </body>
 
