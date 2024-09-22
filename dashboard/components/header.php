@@ -143,6 +143,13 @@
                                 <span>Visit Webiste</span>
                             </a>
                         </li>
+                        <li class="sidebar-item  ">
+
+                            <a href="../users/adminEdit.php" class='sidebar-link'>
+                                <i data-feather="globe" width="20"></i>
+                                <span>Change Password</span>
+                            </a>
+                        </li>
                         
 
                     </ul>
