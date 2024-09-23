@@ -1,4 +1,16 @@
 <?php
+
+session_abort();
+if(isset($_COOKIE['email'])){
+    
+    session_start();
+    $_SESSION['email'] = $_COOKIE['email'];
+    $_SESSION['cid'] = $_COOKIE['cid'];
+
+}
+
+
+
 include 'components/header.php';
 include 'dashboard/Controller/class/product.class.php';
 

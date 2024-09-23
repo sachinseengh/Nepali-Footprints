@@ -150,6 +150,13 @@
                                 <span>Change Password</span>
                             </a>
                         </li>
+                        <li class="sidebar-item  ">
+
+                            <a href="./Controller/adminOperations/logout.php" class='sidebar-link'>
+                            <i class="fa-solid fa-right-from-bracket"></i>
+                          <span>Logout</span>
+                            </a>
+                            </li>
                         
 
                     </ul>

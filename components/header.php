@@ -1,3 +1,5 @@
+
+
 <!doctype html>
 <html lang="en">
 
@@ -71,7 +73,7 @@
         </button>
 
         <div class="collapse navbar-collapse" id="navbarsFurni">
-            <ul class="custom-navbar-nav navbar-nav ms-auto mx-2 mb-2 mb-md-0">
+            <ul class="custom-navbar-nav navbar-nav ms-auto mx-2 mb-2 mb-md-0 ">
                 <form id="searchForm" action='./searchpage.php' method="get" class="d-flex">
                     <input class="form-control me-2 form-control-transparent" id="searchInput" type="search" name="query"  placeholder="Search"
                         aria-label="Search" >
@@ -81,15 +83,19 @@
                 </form>
             </ul>
 
-            <ul class="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-1">
-                <?php if(isset($_SESSION['user'])): ?>
-                <div class="author-pic text-center">
-                    <img src="../images/person-1.png" alt="Maria Jones" class="img-fluid" style="border-radius:200px; height:2rem">
-                </div>
-                <?php else: ?>
-                <li><a class="nav-link" href="./users/login.php"><img src="./images/user.svg" alt="Login"></a></li>
-                <?php endif; ?>
-                <li><a class="nav-link" href="cart.php"><img src="./images/cart.svg" alt="Cart"></a></li>
+            <ul class="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-1 pt-1 gap-2">
+            <?php
+          
+            if(isset($_SESSION['email'])): ?>
+                <a href="./users/login.php" style="text-decoration:none"> <div class="author-pic text-center mr-2  mt-2" style="background-color:white;border-radius:200px; height:2rem;width:2rem;padding-top:0.1rem">
+                       <!-- <img src="./images/person-1.png" alt="Maria Jones" class="img-fluid"
+                            style="border-radius:200px; height:2rem"> -->
+                            <span style="font-size:1.3rem;color:green" ><?php echo substr($_SESSION['email'],0,1);?></span>
+                    </div></a>
+                    <?php else: ?>
+                    <li><a class="nav-link" href="./users/login.php"><img src="./images/user.svg"></a></li>
+                    <?php endif; ?>
+                    <li><a class="nav-link" href="./cart.php"><img src="./images/cart.svg"></a></li>
             </ul>
         </div>
     </div>
@@ -140,3 +146,4 @@
         </div>
 
     </nav>
+   

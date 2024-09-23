@@ -1,23 +1,29 @@
-<?php include('components/header.php'); 
+<?php 
+
+
+
+session_start();
+if(!isset($_SESSION['email'] ) && !isset($_SESSION['cid'])){
+
+    header('Location:./login.php'); 
+    exit(); 
+}
+
+
+include('components/header.php'); 
 
 require_once ('../dashboard/Controller/class/order.class.php');
+require_once ('../dashboard/Controller/class/user.class.php');
+
+$user = new User();
+$userOne = $user->retrieve();
 
 $order = new Order();
 
 $orders = $order->retrieveOne();
-
-
-
-
 ?>
 
-<!-- Alert -->
-<?php if(isset($_GET['alert'])): ?>
-<div class="alert alert-success alert-dismissible fade show my-3" role="alert">
-    <strong> <?php echo $_GET['alert']; ?> </strong>
-    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-</div>
-<?php endif; ?>
+
 
 <div class="container my-1  py-3">
     <h1 class="text-center title" style="font-family:'Inter, sans-serif">Your Account</h1>
@@ -26,10 +32,11 @@ $orders = $order->retrieveOne();
             <div class="card">
                 <div class="card-body">
                     <div class="author-info">
-                        <div class="author-pic text-center">
+                        <!-- <div class="author-pic text-center">
                             <img src="../images/person-1.png" alt="Maria Jones" class="img-fluid "
                                 style="border-radius:200px; height:7rem">
-                        </div>
+                        </div> -->
+
                        
                     </div>
                     <div class="d-flex justify-content-between flex-row">
@@ -41,6 +48,7 @@ $orders = $order->retrieveOne();
                     <div >
                     <a href="edit.php" class="btn btn-primary">Edit</a>
                         <a  class="btn btn-danger delete-button">Delete</a>
+                        <a href="../dashboard/Controller/userOperations/logout.php" class="btn btn-secondary ">Logout</a>
                     </div>
                     </div>
                     

@@ -1,4 +1,18 @@
-<?php include('./components/header.php'); 
+<?php 
+
+session_abort();
+session_start();
+if(isset($_SESSION['email'] ) && isset($_SESSION['cid'])){
+
+    header('Location:./profile.php'); 
+    exit(); 
+}
+
+
+
+
+
+include('./components/header.php'); 
 ?>
 
 <!-- Alert msg -->
@@ -71,6 +85,9 @@
                         <a href="register.php" class="btn btn-secondary">Register</a>
                         <button type="submit" class="btn btn-primary">Login</button>
                     </form>
+                    <div class="mt-4" >
+                        <a href="../" >Back to  Site </a>
+                        </div>
                 </div>
             </div>
         </div>

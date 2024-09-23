@@ -1,5 +1,29 @@
 <?php
 
+
+if(isset($_COOKIE['username'])){
+    
+    session_start();
+   
+    $_SESSION['username']= $_COOKIE['username'];
+}
+
+
+
+if(!isset($_SESSION['username'] ) ){
+
+    header('Location:../users/adminLogin.php'); 
+    exit(); 
+}
+
+
+
+
+
+
+
+
+
 include 'components/header.php';
 
 
@@ -16,6 +40,7 @@ $orders = $order->retrieve();
             <div class="main-content container-fluid">
                 <div class="page-title">
                     <h3>Dashboard</h3>
+                    
                     <p class="text-subtitle text-muted">A good dashboard to display your statistics</p>
                 </div>
                 <section class="section">

@@ -28,10 +28,16 @@ class Admin extends common {
     public function login(){
         $conn  = new mysqli("localhost","root","","nepalifootprints");
 
-        $sql ="select * from admin where username = 'sachinseengh@gmail.com' and password ='$this->password'";
+        $sql ="select * from admin where username = '$this->email' and password ='$this->password'";
         $res = mysqli_query($conn,$sql);
 
          if(mysqli_num_rows($res)>0){
+
+          session_start();
+          $_SESSION['username']= $this->email;
+          setcookie("username",$this->email, time() + (24 * 60 * 60), "/");
+    
+
             header('Location: /NepaliFootprints/dashboard/');
             exit();
         }else{
