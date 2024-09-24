@@ -27,10 +27,12 @@ class User extends common {
 
     }
 
+    //this is used for retrieving cid at login(line 68) and again in profile for details
     public function retrieve(){
 
         $conn  = new mysqli("localhost","root","","nepalifootprints");
-        $sql =" select * from customer  where email ='$this->email'";
+        $sql =" select * from customer  where email ='$this->email' or cid='$this->cid'";
+        
         $res = mysqli_query($conn,$sql);
 
         if($res->num_rows>0){
@@ -76,7 +78,7 @@ class User extends common {
 
                
 
-            header('Location: /NepaliFootprints/users/profile.php');
+            header('Location: /NepaliFootprints/shop.php');
             exit();
         }else{
             header('Location: /NepaliFootprints/users/login.php?ErrMsg=' . urlencode("Incorrect Credentials"));
@@ -88,7 +90,7 @@ class User extends common {
         $conn  = new mysqli("localhost","root","","nepalifootprints");
 
         
-        $sql ="update customer set password ='$this->password',phone='$this->phone',address ='$this->address',city='$this->city' where email='$this->email'";
+        $sql ="update customer set password ='$this->password',phone='$this->phone',address ='$this->address',city='$this->city' where cid='$this->cid'";
 
     
         $res = mysqli_query($conn,$sql);
@@ -107,12 +109,29 @@ class User extends common {
         $conn  = new mysqli("localhost","root","","nepalifootprints");
 
         
-        $sql ="delete from customer where email='$this->email'";
     
-        $res = mysqli_query($conn,$sql);
+        $sql1 ="delete from orders where cid='$this->cid'";
+        $sql2 ="delete from cart where cid='$this->cid'";
+        $sql3 ="delete from customer where cid='$this->cid'";
+    
+    
+        $res1 = mysqli_query($conn,$sql1);
+        $res2 = mysqli_query($conn,$sql2);
+
+        if($res1 && $res2){
+            $res3 = mysqli_query($conn,$sql3);
+        }
+       
 
 
-        if($res){
+        if($res3){
+            session_start();
+            session_unset();
+            session_destroy();
+    
+            session_abort();
+            setcookie('email', '', time() - 3600, '/');
+            setcookie('cid', '', time() - 3600, '/');
             header('Location: /NepaliFootprints/users/login.php?Msg=' . urlencode("Account deleted"));
             exit();
         }else{
@@ -121,16 +140,35 @@ class User extends common {
         }
 
     }
+    //this will be used by admin
     public function deleteCustomer(){
         $conn  = new mysqli("localhost","root","","nepalifootprints");
 
         
-        $sql ="delete from customer where email='$this->email'";
     
-        $res = mysqli_query($conn,$sql);
+        $sql1 ="delete from orders where cid='$this->cid'";
+        $sql2 ="delete from cart where cid='$this->cid'";
+        $sql3 ="delete from customer where cid='$this->cid'";
+    
+    
+        $res1 = mysqli_query($conn,$sql1);
+        $res2 = mysqli_query($conn,$sql2);
+
+        if($res1 && $res2){
+            $res3 = mysqli_query($conn,$sql3);
+        }
+       
 
 
-        if($res){
+        if($res3){
+            session_start();
+            session_unset();
+            session_destroy();
+    
+            session_abort();
+            setcookie('email', '', time() - 3600, '/');
+            setcookie('cid', '', time() - 3600, '/');
+
             header('Location: /NepaliFootprints/dashboard/manage-customer.php?Msg=' . urlencode("Account deleted"));
             exit();
         }else{
@@ -141,6 +179,7 @@ class User extends common {
     }
 
     public function logout(){
+        
         session_start();
         session_unset();
         session_destroy();

@@ -4,13 +4,13 @@ require_once('cart.class.php');
 require_once('common.class.php');
 
 class Cart extends common{
-    public $featured_img,$pid,$quantity,$name,$price,$cart_id;
+    public $featured_img,$pid,$quantity,$name,$price,$cart_id,$cid;
 
     public function save() {
         $conn = mysqli_connect('localhost','root','','nepalifootprints');
-        $sql = "insert into cart (pid,quantity,price,size) values('$this->pid','$this->quantity','$this->price','$this->size')";
+        $sql = "insert into cart (pid,quantity,price,size,cid) values('$this->pid','$this->quantity','$this->price','$this->size','$this->cid')";
 
-        echo $sql;
+       
 
         $res = mysqli_query($conn,$sql);
         if($res){
@@ -27,7 +27,7 @@ class Cart extends common{
 public function retrieve(){
     $conn = mysqli_connect('localhost','root','','nepalifootprints');
 
-    $sql = "SELECT  cart.cart_id As cartId, cart.quantity AS quantity ,cart.total AS total ,cart.size AS size, product.pid AS pid, product.name AS product_name,  product.price AS product_price,  product.featured_img FROM  cart INNER JOIN  product ON  cart.pid = product.pid ";
+    $sql = "SELECT  cart.cart_id As cartId, cart.quantity AS quantity ,cart.total AS total ,cart.size AS size, product.pid AS pid, product.name AS product_name,  product.price AS product_price,  product.featured_img FROM  cart INNER JOIN  product ON  cart.pid = product.pid  where cid = '$this->cid'";
 
 
     $res = mysqli_query($conn,$sql);

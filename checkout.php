@@ -1,5 +1,19 @@
 <?php
 
+
+session_abort();
+session_start();
+
+if(!isset($_SESSION['email']) && !isset($_SESSION['cid'])){
+
+  header('Location:./users/login.php?Msg=Please Login First');
+
+
+  exit();
+
+}
+
+
 include 'components/header.php';
 
 include 'dashboard/Controller/class/cart.class.php';

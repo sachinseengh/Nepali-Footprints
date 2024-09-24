@@ -12,6 +12,30 @@ $orders= $Order->retrieve();
 
 ?>
 <div class="main-content container-fluid">
+
+<?php if (isset($_GET['msg'])) { ?>
+                <script>
+                Swal.fire({
+                    position: 'center',
+                    icon: 'success',
+                    title: '<?php echo $_GET['msg']; ?>',
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+                </script>
+                <?php } ?>
+
+                <?php if (isset($_GET['ErrMsg'])) { ?>
+                <script>
+                Swal.fire({
+                    position: 'center',
+                    icon: 'error',
+                    title: '<?php echo $_GET['ErrMsg']; ?>',
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+                </script>
+                <?php } ?>
     <div class="page-title">
         <div class="row">
             <div class="col-12 col-md-6 order-md-1 order-last">
@@ -75,7 +99,7 @@ $orders= $Order->retrieve();
                             
                             
                             <td><?php echo $order['order_date'];?></td>
-                            <td><?php echo $order['customer_name'];?></td>
+                            <td><?php echo $order['customer_name'] .'('. $order['cid'] .')' ?></td>
                             <td><?php echo $order['product'];?></td>
 
                             <td><?php echo $order['quantity'];?></td>
@@ -89,7 +113,7 @@ $orders= $Order->retrieve();
 
                             <td>
                             <div class="container">
-                                <a class="text-dark my-1 mx-1 " href="#"><i class='fas fa-trash-alt '
+                                <a class="text-dark my-1 mx-1 delete-button " ><i class='fas fa-trash-alt '
                                         style='font-size:1.5rem;color:red;'></i></a>
                             </div>
                             </td>
@@ -106,7 +130,53 @@ $orders= $Order->retrieve();
 
     </section>
 </div>
+<script>
 
+
+document.addEventListener('DOMContentLoaded', function () {
+    const deleteButtons = document.querySelectorAll('.delete-button');
+
+    deleteButtons.forEach(button => {
+        button.addEventListener('click', function (event) {
+            event.preventDefault();
+            
+            // Get the current row and find the order ID from the row
+            const orderRow = button.closest('tr');
+            const orderId = orderRow.querySelector('td').textContent; // Assuming the first <td> has the order ID
+
+            const swalWithBootstrapButtons = Swal.mixin({
+                customClass: {
+                    confirmButton: 'btn btn-danger swal-confirm-btn',
+                    cancelButton: 'btn btn-secondary swal-cancel-btn'
+                },
+                buttonsStyling: false
+            });
+
+            swalWithBootstrapButtons.fire({
+                title: 'Are you sure?',
+                text: "You won't be able to revert this!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonText: 'Yes, delete it!',
+                cancelButtonText: 'No, cancel!',
+                reverseButtons: true
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    // If confirmed, proceed with deletion and send the order ID in the URL
+                    window.location.href = `../dashboard/Controller/deleteOrder.php?id=${orderId}`;
+                } else if (result.dismiss === Swal.DismissReason.cancel) {
+                    swalWithBootstrapButtons.fire(
+                        'Cancelled',
+                        'Your Account is safe :)',
+                        'error'
+                    );
+                }
+            });
+        });
+    });
+});
+
+</script>
 <?php
 
 

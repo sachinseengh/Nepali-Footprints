@@ -36,7 +36,7 @@ public function save(){
     public function retrieveOne(){
 
         $conn =mysqli_connect('localhost','root','','nepalifootprints');
-        $sql = "select * from orders where email ='sachinseengh@gmail.com' ";
+        $sql = "select * from orders where cid='$this->cid' ";
 
 
         $res = mysqli_query($conn,$sql);
@@ -83,7 +83,22 @@ public function save(){
         }
     
     }
+    public function Delete(){
+        $conn = mysqli_connect('localhost', 'root', '', 'nepalifootprints');
+    
+        $sql ="delete from orders where oid='$this->oid'";
 
+    
+        $res = mysqli_query($conn,$sql);
+
+        if($res){
+            header('Location: /NepaliFootprints/dashboard/manage-orders.php?Msg=' . urlencode("Order Deleted Successfully"));
+            exit();
+        }else{
+            header('Location: /NepaliFootprints/dashboard/manage-orders.php?ErrMsg=' . urlencode("Failed to delete order"));
+        }
+    
+    }
     
     
 }

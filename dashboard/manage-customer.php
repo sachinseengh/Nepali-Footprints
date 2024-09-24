@@ -14,6 +14,30 @@ $users = $user->retrieveAll();
 
 <div class="main-content container-fluid">
 
+<?php if (isset($_GET['msg'])) { ?>
+                <script>
+                Swal.fire({
+                    position: 'center',
+                    icon: 'success',
+                    title: '<?php echo $_GET['msg']; ?>',
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+                </script>
+                <?php } ?>
+
+                <?php if (isset($_GET['ErrMsg'])) { ?>
+                <script>
+                Swal.fire({
+                    position: 'center',
+                    icon: 'error',
+                    title: '<?php echo $_GET['ErrMsg']; ?>',
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+                </script>
+                <?php } ?>
+
     <div class="page-title">
         <div class="row">
             <div class="col-12 col-md-6 order-md-1 order-last">
@@ -77,6 +101,8 @@ $users = $user->retrieveAll();
 
 
 <script>
+
+
 document.addEventListener('DOMContentLoaded', function () {
     const deleteButtons = document.querySelectorAll('.delete-button');
 
@@ -84,6 +110,9 @@ document.addEventListener('DOMContentLoaded', function () {
         button.addEventListener('click', function (event) {
             event.preventDefault();
             
+            // Get the current row and find the order ID from the row
+            const orderRow = button.closest('tr');
+            const orderId = orderRow.querySelector('td').textContent; // Assuming the first <td> has the order ID
 
             const swalWithBootstrapButtons = Swal.mixin({
                 customClass: {
@@ -103,12 +132,12 @@ document.addEventListener('DOMContentLoaded', function () {
                 reverseButtons: true
             }).then((result) => {
                 if (result.isConfirmed) {
-                    // If confirmed, proceed with deletion
-                    window.location.href = `./Controller/deleteCustomer.php`;
+                    // If confirmed, proceed with deletion and send the order ID in the URL
+                    window.location.href = `../dashboard/Controller/deleteCustomer.php?id=${orderId}`;
                 } else if (result.dismiss === Swal.DismissReason.cancel) {
                     swalWithBootstrapButtons.fire(
                         'Cancelled',
-                        'Your Customer is safe :)',
+                        'Your Account is safe :)',
                         'error'
                     );
                 }
@@ -116,6 +145,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 });
+
 </script>
 
 

@@ -1,5 +1,9 @@
 
+<?php
+session_abort();
+session_start();
 
+?>
 <!doctype html>
 <html lang="en">
 

@@ -4,8 +4,9 @@
 require_once('../class/user.class.php');
 $user= new User();
 
-
-$user->set('email','sachinseengh@gmail.com');
+session_abort();
+session_start();
+$user->set('cid',$_SESSION['cid']);
 
 $user->delete();
 

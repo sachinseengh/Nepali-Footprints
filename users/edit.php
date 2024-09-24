@@ -1,14 +1,13 @@
-<?php include('components/header.php'); 
-require_once('../dashboard/Controller/class/user.class.php');
-    
-    $user= new User();
-    $user->set('email','sachinseengh@gmail.com');
+<?php 
 
+
+include('components/header.php'); 
+require_once('../dashboard/Controller/class/user.class.php');
+ 
+    $user= new User();
+    $user->set('cid',$_SESSION['cid']);
 
     $row= $user->retrieve();
-    
-
-
 ?>
 
 

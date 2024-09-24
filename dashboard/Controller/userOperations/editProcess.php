@@ -1,10 +1,14 @@
 <?php
 
 require_once('../class/user.class.php');
-$user= new User();
+    
 
+    session_abort();
+    session_start();
 
-$user->set('email','sachinseengh@gmail.com');
+    $user= new User();
+    $user->set('cid',$_SESSION['cid']);
+    $user->set('email',$_SESSION['email']);
     $user->set('password',$_POST['password']);
     $user->set('name',$_POST['name']);
     $user->set('phone',$_POST['phone']);
