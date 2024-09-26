@@ -22,6 +22,7 @@ $cart = new Cart();
 $cart->set('pid',$id);
 
 //Check if the item is already in cart
+$cart->set('cid',$_SESSION['cid']);
 $cart->getCartById();
 
 // if not then i will save in cart
