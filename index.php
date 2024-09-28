@@ -107,8 +107,7 @@ $items= $product->getProductsMen();
                                     <img src="images/truck.svg" alt="Image" class="img-fluid">
                                 </div>
                                 <h3>Fast &amp; Free Shipping</h3>
-                                <p>Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam
-                                    vulputate.</p>
+                                <p>Delivered as soon as possible</p>
                             </div>
                         </div>
 
