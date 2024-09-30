@@ -117,8 +117,7 @@ $items= $product->getProductsMen();
                                     <img src="images/bag.svg" alt="Image" class="imf-fluid">
                                 </div>
                                 <h3>Easy to Shop</h3>
-                                <p>Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam
-                                    vulputate.</p>
+                                <p>Easy to shop just becuase of the multiple options</p>
                             </div>
                         </div>
 
