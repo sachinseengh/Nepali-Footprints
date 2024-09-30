@@ -81,23 +81,23 @@ public function totalAmount(){
 }
 
 
-// public function getCart(){
-//     $conn = mysqli_connect('localhost','root','','nepalifootprints');
+public function getCart(){
+    $conn = mysqli_connect('localhost','root','','nepalifootprints');
 
-//     $sql = "SELECT  cart.cart_id AS cartId, cart.quantity AS quantity,cart.size AS size,cart.total As total, product.pid AS pid, product.name AS product_name,  product.price AS product_price,  product.featured_img FROM  cart INNER JOIN  product ON  cart.pid = product.pid ";
+    $sql = "SELECT  cart.cart_id AS cartId, cart.quantity AS quantity,cart.size AS size,cart.total As total, product.pid AS pid, product.name AS product_name,  product.price AS product_price,  product.featured_img FROM  cart INNER JOIN  product ON  cart.pid = product.pid  where cid='$this->cid'";
 
-//     $res = mysqli_query($conn,$sql);
+    $res = mysqli_query($conn,$sql);
 
 
-//     if($res){
-//         $row = $res->fetch_all(MYSQLI_ASSOC);
+    if($res){
+        $row = $res->fetch_all(MYSQLI_ASSOC);
 
-//         return $row;
+        return $row;
             
-//         }else{
-//             return fasle;
-//         }
-// }
+        }else{
+            return fasle;
+        }
+}
 
 public function getCartById(){
     $conn = mysqli_connect('localhost','root','','nepalifootprints');

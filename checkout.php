@@ -20,6 +20,7 @@ include 'dashboard/Controller/class/cart.class.php';
 
 $cart = new Cart();
 
+$cart->set('cid',$_SESSION['cid']);
 $items = $cart->getCart();
 
 
@@ -109,13 +110,9 @@ $total = $cart->totalAmount();
 		                </table>
 
 		                <div class="border p-3 mb-3">
-		                  <h3 class="h6 mb-0"><a class="d-block" data-bs-toggle="collapse" href="#collapsebank" role="button" aria-expanded="false" aria-controls="collapsebank">Direct Bank Transfer</a></h3>
+		               <button type="submit">Pay with Khalti</button>
 
-		                  <div class="collapse" id="collapsebank">
-		                    <div class="py-2">
-		                      <p class="mb-0">Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order won’t be shipped until the funds have cleared in our account.</p>
-		                    </div>
-		                  </div>
+		                  
 		                </div>
 
 		                <div class="border p-3 mb-3">
@@ -141,6 +138,8 @@ $total = $cart->totalAmount();
 		                <div class="form-group">
 		                  
 						  <button type="submit" class="btn btn-black btn-lg py-3 btn-block" id="placeOrderButton" name="submit">Place Order</button>
+						  
+<!-- place order swal is in user/validation/validation.js -->
 		                </div>
 						</form>
 		              </div>
@@ -153,8 +152,9 @@ $total = $cart->totalAmount();
 		    </div>
 		  </div>
 
+		  
 
-
+<!-- place order swal is in user/validation/validation.js -->
 
 
 <?php
