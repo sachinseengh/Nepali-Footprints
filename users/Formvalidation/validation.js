@@ -163,10 +163,10 @@ document.addEventListener('DOMContentLoaded', function() {
                         const emailVal = document.getElementById('email').value;
                         const daddressVal = document.getElementById('daddress').value;
                         const phoneVal = document.getElementById('phone').value;
-
+                     
                         // Submit the form manually after confirmation
                        
-                        window.location.href = `./dashboard/Controller/placeOrder.php?fullname=${nameVal} & email=${email} & address=${daddressVal} & phone=${phoneVal}`;
+                        window.location.href = `./dashboard/Controller/placeOrder.php?fullname=${nameVal} & email=${email} & address=${daddressVal} & phone=${phoneVal}&payment_type='COD'`;
                         
                        
                     } else if (result.dismiss === Swal.DismissReason.cancel) {
@@ -229,9 +229,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 const emailVal = document.getElementById('email').value;
                 const daddressVal = document.getElementById('daddress').value;
                 const phoneVal = document.getElementById('phone').value;
-        
+                const total= document.getElementById('total').textContent;
                 // Redirect to the Khalti payment page after validation
-                window.location.href = `./Khalti/payment-request.php?fullname=${nameVal}&email=${emailVal}&address=${daddressVal}&phone=${phoneVal}`;
+                window.location.href = `./Khalti/payment-request.php?fullname=${nameVal}&email=${emailVal}&address=${daddressVal}&phone=${phoneVal} & total=${total}`;
             }
         });
         

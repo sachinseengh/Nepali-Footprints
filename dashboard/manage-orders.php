@@ -63,6 +63,7 @@ $orders= $Order->retrieve();
                         <tr>
                             <th>Id</th>
                             <th>Status</th>
+                            <th>Payment</th>
                             <th>order Date</th>
                             <th>OrderBy</th>
                             <th>Product</th>
@@ -97,7 +98,7 @@ $orders= $Order->retrieve();
                         }?>"><?php echo $order['status'] ?>   </p><i class='fas fa-pencil-alt '
                             style='font-size:1rem'></i></a></td>
                             
-                            
+                            <td><p class="badge bg-primary"><?php echo $order['payment'];?></p></td>
                             <td><?php echo $order['order_date'];?></td>
                             <td><?php echo $order['customer_name'] .'('. $order['cid'] .')' ?></td>
                             <td><?php echo $order['product'];?></td>

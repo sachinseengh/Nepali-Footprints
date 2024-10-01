@@ -20,6 +20,11 @@ $email = $_GET['email'];
 $address = $_GET['address'];
 $phone = $_GET['phone'];
 
+$payment = $_GET['payment_type']; // Default to 'COD'
+if(isset($_GET['payment_type']) && !empty($_GET['payment_type'])){
+    $payment = $_GET['payment_type']; // Assign payment type directly from GET
+}
+
 $res;
 
 foreach($items as $item){
@@ -27,10 +32,12 @@ foreach($items as $item){
 $conn = mysqli_connect('localhost','root','','nepalifootprints');
 $order_date= date('y-m-d H:i:s');
 
-$sql = "insert into orders(cid,customer_name,product,quantity,size,price,total,delivery_address,phone,email,order_date) values('$cid','$name','".$item['product_name']."','".$item['quantity']."','".$item['size']."','".$item['product_price']."','".$item['total']."','$address','$phone','$email','$order_date')";
+$sql = "insert into orders(cid,customer_name,product,quantity,size,price,total,delivery_address,phone,email,order_date,payment) values('$cid','$name','".$item['product_name']."','".$item['quantity']."','".$item['size']."','".$item['product_price']."','".$item['total']."','$address','$phone','$email','$order_date',$payment)";
 
 
 $res = mysqli_query($conn,$sql);
+
+
 
 }
 

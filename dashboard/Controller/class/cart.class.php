@@ -64,7 +64,7 @@ public function deleteById(){
 public function totalAmount(){
     $conn = mysqli_connect('localhost','root','','nepalifootprints');
 
-    $sql = "select sum(total) as total from cart ";
+    $sql = "select sum(total) as total from cart where cid='$this->cid' ";
     $res = mysqli_query($conn,$sql);
 
 

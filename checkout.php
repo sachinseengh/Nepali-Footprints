@@ -29,6 +29,7 @@ $total = $cart->totalAmount();
 ?>
 
 		<div class="untree_co-section">
+		
 		    <div class="container">
 		     
 		      <div class="row">
@@ -104,7 +105,7 @@ $total = $cart->totalAmount();
 		                    </tr>
 		                    <tr>
 		                      <td class="text-black font-weight-bold"><strong>Order Total</strong></td>
-		                      <td class="text-black font-weight-bold"><strong>NPR <?php echo $total ?></strong></td>
+		                      <td class="text-black font-weight-bold"><strong id="total">NPR <?php echo $total ?></strong></td>
 		                    </tr>
 		                  </tbody>
 		                </table>
