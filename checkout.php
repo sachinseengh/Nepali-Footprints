@@ -36,7 +36,7 @@ $total = $cart->totalAmount();
 		          <h2 class="h3 mb-3 text-black">Billing Details</h2>
 		          <div class="p-3 p-lg-5 border bg-white">
 		            
-				  <form id="orderForm" action="dashboard/Controller/placeOrder.php" method="get" >
+				  <form id="orderForm">
 
 				  
 		            <div class="form-group row">
@@ -110,20 +110,18 @@ $total = $cart->totalAmount();
 		                </table>
 
 		                <div class="border p-3 mb-3">
-		               <button type="submit">Pay with Khalti</button>
+		               <button id="khalti">Pay with Khalti</button>
+					   
+				
 
-		                  
 		                </div>
+						<p>Pay now to get 10% discout</p>
 
 		                <div class="border p-3 mb-3">
-		                  <h3 class="h6 mb-0"><a class="d-block" data-bs-toggle="collapse" href="#collapsecheque" role="button" aria-expanded="false" aria-controls="collapsecheque">Cheque Payment</a></h3>
+		               <button id="cod">Cash on Delivery</button>
 
-		                  <div class="collapse" id="collapsecheque">
-		                    <div class="py-2">
-		                      <p class="mb-0">Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order won’t be shipped until the funds have cleared in our account.</p>
-		                    </div>
-		                  </div>
-		                </div>
+						  </div>
+		              
 
 		                <div class="border p-3 mb-5">
 		                  <h3 class="h6 mb-0"><a class="d-block" data-bs-toggle="collapse" href="#collapsepaypal" role="button" aria-expanded="false" aria-controls="collapsepaypal">Paypal</a></h3>
@@ -137,7 +135,7 @@ $total = $cart->totalAmount();
 
 		                <div class="form-group">
 		                  
-						  <button type="submit" class="btn btn-black btn-lg py-3 btn-block" id="placeOrderButton" name="submit">Place Order</button>
+						  <!-- <button id="COD" class="btn btn-black btn-lg py-3 btn-block" id="placeOrderButton" name="submit">Place Order</button> -->
 						  
 <!-- place order swal is in user/validation/validation.js -->
 		                </div>

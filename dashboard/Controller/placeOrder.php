@@ -7,6 +7,8 @@ require_once './class/cart.class.php';
 
 $cart = new Cart();
 
+
+$cart->set('cid',$_SESSION['cid']);
 $items = $cart->getCart();
 
 
@@ -31,17 +33,15 @@ $sql = "insert into orders(cid,customer_name,product,quantity,size,price,total,d
 $res = mysqli_query($conn,$sql);
 
 }
+
 if($res){
-    
     header('Location: /NepaliFootprints/thankyou.php?msg=' . urlencode("Order placed Successfully"));
-
-
     exit();
 }else{
     header('Location: /NepaliFootprints/checkout.php?ErrMsg=' . urlencode("Something Went Wrong"));
     exit();
-
 }
+
 
 
 

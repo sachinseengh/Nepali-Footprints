@@ -91,8 +91,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const orderForm = document.getElementById('orderForm');
 
+    const khaltibtn = document.getElementById('khalti');
+    const cod = document.getElementById('cod');
+
     if (orderForm) {
-        orderForm.addEventListener('submit', function (event) {
+        cod.addEventListener('click', function (event) {
             const name = document.getElementById('fname').value.trim();
             const email = document.getElementById('email').value.trim();
             const daddress = document.getElementById('daddress').value.trim();
@@ -176,8 +179,64 @@ document.addEventListener('DOMContentLoaded', function() {
                 });
             }
         });
-    }
-    
-    });
+
+        khaltibtn.addEventListener('click', function (event) {
+            // Prevent the form's default submission
+            event.preventDefault();
+        
+            const name = document.getElementById('fname').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const daddress = document.getElementById('daddress').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+        
+            const nameErr = document.querySelector('.nameErr');
+            const emailErr = document.querySelector('.emailErr');
+            const daddressErr = document.querySelector('.daddressErr');
+            const phoneErr = document.querySelector('.phoneErr');
+        
+            let isValid = true;
+        
+            // Clear previous error messages
+            nameErr.textContent = '';
+            emailErr.textContent = '';
+            daddressErr.textContent = '';
+            phoneErr.textContent = '';
+        
+            // Validate input fields
+            if (name === '') {
+                isValid = false;
+                nameErr.textContent = "Name field cannot be empty";
+            }
+        
+            if (email === '') {
+                isValid = false;
+                emailErr.textContent = "Email field cannot be empty";
+            }
+        
+            if (daddress === '') {
+                isValid = false;
+                daddressErr.textContent = "Address field cannot be empty";
+            }
+        
+            if (phone === '') {
+                isValid = false;
+                phoneErr.textContent = "Phone field cannot be empty";
+            }
+        
+            // If validation passes, proceed to redirection
+            if (isValid) {
+                const nameVal = document.getElementById('fname').value;
+                const emailVal = document.getElementById('email').value;
+                const daddressVal = document.getElementById('daddress').value;
+                const phoneVal = document.getElementById('phone').value;
+        
+                // Redirect to the Khalti payment page after validation
+                window.location.href = `./Khalti/payment-request.php?fullname=${nameVal}&email=${emailVal}&address=${daddressVal}&phone=${phoneVal}`;
+            }
+        });
+        
+            }
+        });
+   
     
 
