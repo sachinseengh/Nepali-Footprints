@@ -15,7 +15,7 @@ public function save(){
     public function retrieve(){
 
         $conn =mysqli_connect('localhost','root','','nepalifootprints');
-        $sql = "select * from orders ";
+        $sql = "select * from orders order by order_date desc";
 
 
         $res = mysqli_query($conn,$sql);
@@ -36,7 +36,7 @@ public function save(){
     public function retrieveOne(){
 
         $conn =mysqli_connect('localhost','root','','nepalifootprints');
-        $sql = "select * from orders where cid='$this->cid' ";
+        $sql = "select * from orders where cid='$this->cid' order by order_date desc";
 
 
         $res = mysqli_query($conn,$sql);
@@ -48,6 +48,7 @@ public function save(){
             return false;
         }
     }
+    //it is used for updating the order status
     public function retrieveOneOrder(){
 
         $conn = mysqli_connect('localhost', 'root', '', 'nepalifootprints');
