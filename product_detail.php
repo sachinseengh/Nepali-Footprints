@@ -79,7 +79,7 @@ $item = $product->getById();
 </form>
                 <div>
                     <p>Delivery:</p>
-                    <p>Free standard shipping on orders over $35 before tax, plus free returns.</p>
+                    <p>Free standard shipping on orders over Rs 3500 before tax, plus free returns.</p>
                     <div class="delivery">
                         <p class="d-inline-block me-3">TYPE</p>
                         <p class="d-inline-block me-3">HOW LONG</p>
@@ -89,7 +89,7 @@ $item = $product->getById();
                     <div class="delivery">
                         <p class="d-inline-block me-3">Standard delivery</p>
                         <p class="d-inline-block me-3">1-4 business days</p>
-                        <p class="d-inline-block">$4.50</p>
+                        <p class="d-inline-block">Rs 150</p>
                     </div>
                    
                     <hr>

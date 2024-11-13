@@ -22,30 +22,30 @@ $items= $product->getProductsMen();
 
 
 ?>
-    <!-- End Header/Navigation -->
+<!-- End Header/Navigation -->
 <div class="all">
     <!-- Start Hero Section -->
     <div class="hero pt-4 pb-3">
         <div class="container " id="hero-container">
-			
+
             <div class="d-flex flex-lg-row flex-md-row   flex-column  justify-content-between">
                 <div class="col-lg-5 " id="hero-container-item1">
                     <div class="intro-excerpt  item1">
-                        <h1 class="my-0 ">Modern Interior <span clsas="d-block">Design Studio</span></h1>
-                        <p class="mb-1 ">Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam
-                            vulputate velit im</p>
-                        <p><a href="shop.php" class="d-none d-md-block d-lg-block px-0 btn btn-secondary me-2" style="width:10rem;">Shop Now</a>
-                        <!-- <a href="#"class="btn btn-white-outline">Explore</a></p> -->
+                        <h1 class="my-0 ">Modern Design <span clsas="d-block">Traditional Quality</span></h1>
+                        <p class="mb-1 ">We care what you wear</p>
+                        <p><a href="shop.php" class="d-none d-md-block d-lg-block px-0 btn btn-secondary me-2"
+                                style="width:10rem;">Shop Now</a>
+                            <!-- <a href="#"class="btn btn-white-outline">Explore</a></p> -->
                     </div>
                 </div>
-                <div class="item2 pr-auto pb-2 "  id="hero-container-item1">
-					<img src="./images/casual.png" alt="" class="hero-img-wrap  ">
-                  
-				</div>
-                <div class=" shop-btn  d-block  d-md-none  d-lg-none" >
-                <a href="" class="btn btn-secondary me-2">Shop Now</a>
+                <div class="item2 pr-auto pb-2 " id="hero-container-item1">
+                    <img src="./images/casual.png" alt="" class="hero-img-wrap  ">
+
                 </div>
-            
+                <div class=" shop-btn  d-block  d-md-none  d-lg-none">
+                    <a href="" class="btn btn-secondary me-2">Shop Now</a>
+                </div>
+
             </div>
         </div>
     </div>
@@ -58,11 +58,11 @@ $items= $product->getProductsMen();
 
                 <!-- Start Column 1 -->
                 <div class="col-md-12 col-lg-3 mb-5 mb-lg-0 px-3 py-2">
-                    
-                    <h2 class="mb-2 section-title">Crafted with excellent material.</h2>
+
+                    <h2 class="mb-2 section-title">Made with high Quality Material.</h2>
                     <p class="mb-4">We care ,what you wear! </p>
                     <p><a href="shop.php" class="btn">Explore</a></p>
-                   
+
                 </div>
                 <!-- End Column 1 -->
 
@@ -71,19 +71,20 @@ $items= $product->getProductsMen();
                 <?php foreach($items as $item) { ?>
                 <div class="col-6 col-md-4  col-lg-3   mb-5 mb-md-0">
                     <div class="product">
-                    <a class="product-item" href="product_detail.php?id=<?php  echo $item['pid']?>">
-                        <img src="dashboard/images/<?php  echo $item['featured_img']?>" class="product-thumbnail" height="200" width="200">
-                        <h3 class="product-title"></h3>
-                        <!-- <strong class="product-price"><?php  echo $item['name']?></strong> -->
-                       <h6><span><?php  echo $item['name']?></span></h6>
+                        <a class="product-item" href="product_detail.php?id=<?php  echo $item['pid']?>">
+                            <img src="dashboard/images/<?php  echo $item['featured_img']?>" class="product-thumbnail"
+                                height="200" width="200">
+                            <h3 class="product-title"></h3>
+                            <!-- <strong class="product-price"><?php  echo $item['name']?></strong> -->
+                            <h6><span><?php  echo $item['name']?></span></h6>
 
-                        <span class="icon-cross">
-                            <img src="images/cross.svg" class="img-fluid">
-                        </span>
-                    </a>
+                            <span class="icon-cross">
+                                <img src="images/cross.svg" class="img-fluid">
+                            </span>
+                        </a>
                     </div>
                 </div>
-            <?php } ?>
+                <?php } ?>
 
 
             </div>
@@ -97,8 +98,7 @@ $items= $product->getProductsMen();
             <div class="row justify-content-between ">
                 <div class="col-lg-6 px-2 ">
                     <h2 class="section-title">Why Choose Us</h2>
-                    <p>Becausee we Provide Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam vulputate velit
-                        imperdiet dolor tempor tristique.</p>
+                    <p>Becausee we Provide high quality shoes in reasonable price with fast delivery service</p>
 
                     <div class="row my-5 px-3">
                         <div class="col-6 col-md-6">
@@ -117,7 +117,7 @@ $items= $product->getProductsMen();
                                     <img src="images/bag.svg" alt="Image" class="imf-fluid">
                                 </div>
                                 <h3>Easy to Shop</h3>
-                                <p>Easy to shop just becuase of the multiple options</p>
+                                <p>Categories we Provide</p>
                             </div>
                         </div>
 
@@ -126,9 +126,8 @@ $items= $product->getProductsMen();
                                 <div class="icon">
                                     <img src="images/support.svg" alt="Image" class="imf-fluid">
                                 </div>
-                                <h3>24/7 Support</h3>
-                                <p>Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam
-                                    vulputate.</p>
+                                <h3>24/7 Customer Support</h3>
+                                <p>We provide 24/7 customer support.</p>
                             </div>
                         </div>
 
@@ -138,8 +137,7 @@ $items= $product->getProductsMen();
                                     <img src="images/return.svg" alt="Image" class="imf-fluid">
                                 </div>
                                 <h3>Hassle Free Returns</h3>
-                                <p>Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam
-                                    vulputate.</p>
+                                <p>Easy to return if any damage found from our side</p>
                             </div>
                         </div>
 
@@ -166,24 +164,25 @@ $items= $product->getProductsMen();
                         <div class="grid grid-2"><img src="images/formal.png" alt="Untree.co"></div>
                         <div class="grid grid-1"><img src="images/boot.png" alt="Untree.co"></div>
                         <div class="grid grid-3"><img src="images/casual.png" alt="Untree.co"></div>
-                        
-                       
+
+
                     </div>
                 </div>
                 <div class="col-lg-5 ps-lg-5 px-3">
-                    <h2 class="section-title mb-4">We Help You Make Modern Interior Design</h2>
-                    <p>Donec facilisis quam ut purus rutrum lobortis. Donec vitae odio quis nisl dapibus malesuada.
-                        Nullam ac aliquet velit. Aliquam vulputate velit imperdiet dolor tempor tristique. Pellentesque
-                        habitant morbi tristique senectus et netus et malesuada</p>
+                    <h2 class="section-title mb-4">We Help You Find the Perfect Shoes</h2>
+                    <p>Discover comfort, style, and quality with our exclusive range of shoes. Whether you need casual
+                        wear or formal attire, we have something for every occasion. Elevate your wardrobe with shoes
+                        that offer both elegance and functionality.</p>
 
                     <ul class="list-unstyled custom-list my-4">
-                        <li>Donec vitae odio quis nisl dapibus malesuada</li>
-                        <li>Donec vitae odio quis nisl dapibus malesuada</li>
-                        <li>Donec vitae odio quis nisl dapibus malesuada</li>
-                        <li>Donec vitae odio quis nisl dapibus malesuada</li>
+                        <li>Designed for all-day comfort and durability</li>
+                        <li>Available in various styles to match any outfit</li>
+                        <li>Crafted from premium materials for long-lasting wear</li>
+                        <li>Perfect for both casual and formal occasions</li>
                     </ul>
-                    <p><a herf="#" class="btn">Explore</a></p>
+                    <p><a href="#" class="btn">Explore</a></p>
                 </div>
+
             </div>
         </div>
     </div>
@@ -284,9 +283,9 @@ $items= $product->getProductsMen();
                                     </div>
                                 </div>
                             </div> -->
-                            <!-- END item -->
+    <!-- END item -->
 
-                            <!-- <div class="item">
+    <!-- <div class="item">
                                 <div class="row justify-content-center">
                                     <div class="col-lg-8 mx-auto">
 
@@ -312,9 +311,9 @@ $items= $product->getProductsMen();
                                     </div>
                                 </div>
                             </div> -->
-                            <!-- END item -->
+    <!-- END item -->
 
-                            <!-- <div class="item">
+    <!-- <div class="item">
                                 <div class="row justify-content-center">
                                     <div class="col-lg-8 mx-auto">
 
@@ -340,19 +339,19 @@ $items= $product->getProductsMen();
                                     </div>
                                 </div>
                             </div> -->
-                            <!-- END item -->
-<!-- 
+    <!-- END item -->
+    <!-- 
                         </div> -->
 
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- End Testimonial Slider -->
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- End Testimonial Slider -->
 
-    <!-- Start Blog Section -->
-    <!-- <div class="blog-section">
+<!-- Start Blog Section -->
+<!-- <div class="blog-section">
         <div class="container">
             <div class="row mb-5">
                 <div class="col-md-6">
@@ -409,11 +408,11 @@ $items= $product->getProductsMen();
             </div>
         </div>
     </div> -->
-    <!-- End Blog Section -->
+<!-- End Blog Section -->
 
-    <!-- Start Footer Section -->
-	</div>
- 
+<!-- Start Footer Section -->
+</div>
+
 <?php
 
 include 'components/footer.php';
