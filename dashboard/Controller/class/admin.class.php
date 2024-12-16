@@ -58,6 +58,15 @@ class Admin extends common {
         $res = mysqli_query($conn,$sql);
 
         if($res){
+
+            session_start();
+            session_unset();
+            session_destroy();
+            session_abort();
+            
+            
+            setcookie('username', '', time() - 3600, '/');
+
             header('Location: /NepaliFootprints/users/adminLogin.php?Msg=' . urlencode("Password Updated"));
             exit();
         }else{

@@ -11,7 +11,7 @@ session_start();
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="Untree.co">
-    <link rel="shortcut icon" href="favicon.png">
+    <link rel="shortcut icon" href="./images/favicon.png">
 
     <meta name="description" content="" />
     <meta name="keywords" content="bootstrap, bootstrap4" />
@@ -20,6 +20,7 @@ session_start();
     <link href="./css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
+    <link rel="shortcut icon" href="./images/favicon.svg" type="image/x-icon">
     <link href="./css/tiny-slider.css" rel="stylesheet">
     <link href="./css/style.css" rel="stylesheet">
     <link href="./css/additional.css" rel="stylesheet">

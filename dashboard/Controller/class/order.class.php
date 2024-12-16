@@ -27,8 +27,54 @@ public function save(){
             return false;
         }
 
+    }
+
+    public function TotalActiveOrders(){
+
+        $conn =mysqli_connect('localhost','root','','nepalifootprints');
+        $sql = "select count(*) as activeOrders from orders where status!='Delivered';";
 
 
+        $res = mysqli_query($conn,$sql);
+
+        if($res){
+            $datalist =$res->fetch_assoc();
+            return $datalist;
+        }else{
+            return false;
+        }
+
+    }
+    public function TotalDeliveredOrders(){
+
+        $conn =mysqli_connect('localhost','root','','nepalifootprints');
+        $sql = "select count(*) as deliveredOrders from orders where status='Delivered';";
+
+
+        $res = mysqli_query($conn,$sql);
+
+        if($res){
+            $datalist =$res->fetch_assoc();
+            return $datalist;
+        }else{
+            return false;
+        }
+
+    }
+    public function TotalRevenue(){
+
+        $conn =mysqli_connect('localhost','root','','nepalifootprints');
+        $sql = "select sum(price) as total from orders where status='Delivered';";
+
+
+        $res = mysqli_query($conn,$sql);
+
+        if($res){
+            $datalist =$res->fetch_assoc();
+            return $datalist;
+        }else{
+            return false;
+        }
 
     }
 

@@ -81,16 +81,14 @@ include('./components/admin_header.php');
                             <input type="password" class="form-control" id="password" name="password">
                         </div>
                         
-                        
-                        <button type="submit" class="btn btn-primary " style="margin-left:2%;margin-top:2%;padding:1rem 17rem">Login</button>
-
+                        <div class="d-flex ">
+                        <button type="submit" class="btn btn-primary " style="margin-left:2%;margin-top:2%;padding:1rem 5rem">Login</button>
+                        </div>
                         <div class="d-flex">
                         <div class="mt-4" >
                         <a href="../" >Back to  Site </a>
                         </div>
-                        <div class="mt-4" >
-                        <a href="register.php"  >Forget Password</a>
-                        </div>
+                      
                         </div>
                      
                     </form>

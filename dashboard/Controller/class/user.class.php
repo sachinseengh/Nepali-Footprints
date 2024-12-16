@@ -195,6 +195,22 @@ class User extends common {
         exit();
     }
 
+
+    public function TotalCustomer(){
+        $conn = mysqli_connect('localhost','root','','nepalifootprints');
+
+        $sql = "select count(*) as totalCustomer from customer";
+
+        $var = mysqli_query($conn,$sql);
+
+        if($var->num_rows>0){
+            $datalist = $var->fetch_all();
+            return $datalist;
+        }else{
+            return false;
+        }
+
+}
 }
 
 

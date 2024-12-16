@@ -69,10 +69,17 @@ $item = $product->getById();
                                         <!-- Quill editor will be rendered here -->
                                     </div>
                                     <textarea id="editor-content" name="desc"
-                                        style="display:none;"><?php echo $item->description; ?></textarea>
-                                </div>
+                                        style="display:none;"></textarea>
+                            <br>
+                            <h5>Old description</h5>
+                            <h6><?php echo htmlspecialchars_decode($item->description); ?></h6>
+                            
+                                    </div>
+                              
                             </div>
                         </div>
+                       
+                        
 
 
 
@@ -133,96 +140,74 @@ $item = $product->getById();
                         </div>
                     </div>
                     <h6 class="mb-0">Images</h6>
-                    <div>
-                        <div class="d-flex row ">
-                            <div class="col-12">
-                                <div>
-                                    <label class="col-form-label p-1">Featured Image:</label>
-                                </div>
-                                <div>
-                                    <!-- <div class="form-file">
-                      <input type="file" class="form-file-input" id="fileInput1" name="featured_img" accept="image/*" >
-                      <img id="preview1" class="preview" src="./images/<?php echo $item->featured_img; ?>" alt="Featured Image Preview" height="70" width="70" style="padding-top:0.5rem;">
-                    
-                     
-                    </div> -->
-                                    <div class="form-file">
-                                        <input type="file" class="form-file-input" id="fileInput1" name="featured_img"
-                                            accept="image/*">
-                                        <img id="preview1" class="preview"
-                                            src="./images/<?php echo $item->featured_img; ?>"
-                                            alt="Featured Image Preview" height="70" width="70"
-                                            style="padding-top:0.5rem;">
-                                        <input type="hidden" name="existing_img"
-                                            value="<?php echo $item->featured_img; ?>">
-                                    </div>
+<div>
+    <div class="d-flex row ">
+        <div class="col-12">
+            <div>
+                <label class="col-form-label p-1">Featured Image:</label>
+            </div>
+            <div>
+                <div class="form-file">
+                    <input type="file" class="form-file-input" id="fileInput1" name="featured_img" accept="image/*">
+                    <img id="preview1" class="preview" src="./images/<?php echo $item->featured_img; ?>"
+                        alt="Featured Image Preview" height="70" width="70" style="padding-top:0.5rem;">
+                    <input type="hidden" name="existing_img" value="<?php echo $item->featured_img; ?>">
+                </div>
+            </div>
+        </div>
+    </div>
 
+    <!-- Additional Image 1 -->
+    <div class="col-12">
+        <div class="form-group align-items-center">
+            <div class="col-lg-3 col-3">
+                <label class="col-form-label">Additional Image 1:</label>
+            </div>
+            <div class="col-lg-9 col-9">
+                <div class="form-file">
+                    <input type="file" class="form-file-input" id="fileInput2" name="add_img1" accept="image/*">
+                    <img id="preview2" class="preview" src="./images/<?php echo $item->add_img1; ?>"
+                        alt="Additional Image 1 Preview" height="70" width="70" style="padding-top:0.5rem;">
+                    <input type="hidden" name="existing_add_img1" value="<?php echo $item->add_img1; ?>">
+                </div>
+            </div>
+        </div>
+    </div>
 
+    <!-- Additional Image 2 -->
+    <div class="col-12">
+        <div class="form-group align-items-center">
+            <div class="col-lg-3 col-3">
+                <label class="col-form-label">Additional Image 2:</label>
+            </div>
+            <div class="col-lg-9 col-9">
+                <div class="form-file">
+                    <input type="file" class="form-file-input" id="fileInput3" name="add_img2" accept="image/*">
+                    <img id="preview3" class="preview" src="./images/<?php echo $item->add_img2; ?>"
+                        alt="Additional Image 2 Preview" height="70" width="70" style="padding-top:0.5rem;">
+                    <input type="hidden" name="existing_add_img2" value="<?php echo $item->add_img2; ?>">
+                </div>
+            </div>
+        </div>
+    </div>
 
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Additional Image 1 -->
-                        <div class="col-12">
-                            <div class="form-group align-items-center">
-                                <div class="col-lg-3 col-3">
-                                    <label class="col-form-label">Additional Image 1:</label>
-                                </div>
-                                <div class="col-lg-9 col-9">
-                                    <div class="form-file">
-                                        <input type="file" class="form-file-input" id="fileInput2" name="add_img1"
-                                            accept="image/*">
-                                        <img id="preview1" class="preview" src="./images/<?php echo $item->add_img1; ?>"
-                                            alt="Additional Image 1 Preview" height="70" width="70"
-                                            style="padding-top:0.5rem;">
-                                        <input type="hidden" name="existing_add_img1"
-                                            value="<?php echo $item->add_img1; ?>">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Additional Image 2 -->
-                        <div class="col-12">
-                            <div class="form-group align-items-center">
-                                <div class="col-lg-3 col-3">
-                                    <label class="col-form-label">Additional Image 2:</label>
-                                </div>
-                                <div class="col-lg-9 col-9">
-                                    <div class="form-file">
-                                        <input type="file" class="form-file-input" id="fileInput3" name="add_img2"
-                                            accept="image/*">
-                                        <img id="preview2" class="preview" src="./images/<?php echo $item->add_img2; ?>"
-                                            alt="Additional Image 2 Preview" height="70" width="70"
-                                            style="padding-top:0.5rem;">
-                                        <input type="hidden" name="existing_add_img2"
-                                            value="<?php echo $item->add_img2; ?>">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Additional Image 3 -->
-                        <div class="col-12">
-                            <div class="form-group align-items-center">
-                                <div class="col-lg-3 col-3">
-                                    <label class="col-form-label">Additional Image 3:</label>
-                                </div>
-                                <div class="col-lg-9 col-9">
-                                    <div class="form-file">
-                                        <input type="file" class="form-file-input" id="fileInput4" name="add_img3"
-                                            accept="image/*">
-                                        <img id="preview3" class="preview" src="./images/<?php echo $item->add_img3; ?>"
-                                            alt="Additional Image 3 Preview" height="70" width="70"
-                                            style="padding-top:0.5rem;">
-                                        <input type="hidden" name="existing_add_img3"
-                                            value="<?php echo $item->add_img3; ?>">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+    <!-- Additional Image 3 -->
+    <div class="col-12">
+        <div class="form-group align-items-center">
+            <div class="col-lg-3 col-3">
+                <label class="col-form-label">Additional Image 3:</label>
+            </div>
+            <div class="col-lg-9 col-9">
+                <div class="form-file">
+                    <input type="file" class="form-file-input" id="fileInput4" name="add_img3" accept="image/*">
+                    <img id="preview4" class="preview" src="./images/<?php echo $item->add_img3; ?>"
+                        alt="Additional Image 3 Preview" height="70" width="70" style="padding-top:0.5rem;">
+                    <input type="hidden" name="existing_add_img3" value="<?php echo $item->add_img3; ?>">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 
                     <h6 class="my-3">Size and Quantity</h6>

@@ -16,11 +16,6 @@ $conn = mysqli_connect('localhost', 'root', '', 'nepalifootprints');
             $msg ="No Result Found";
         }
 
-    
-
-
-
-
 ?>
 <!-- End Header/Navigation -->
 
